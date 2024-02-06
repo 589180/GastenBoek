@@ -28,7 +28,21 @@
   
   .Button1 { grid-area: Button1;
     background-color: #C1FF72;
-    width: 200px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    border-style: solid;
+    border-width: 9px;
+    border-color: #7ED957;
+    border-radius: 20px;
+    z-index: 1;
+}
+  
+  .Button2 { grid-area: Button2;
+    background-color: #C1FF72;
+    width: 250px;
     height: 100px;
     position: absolute;
     top: 80%;
@@ -39,21 +53,7 @@
     border-radius: 20px;
     z-index: 1;
 }
-  
-  .Button2 { grid-area: Button2;
-    background-color: #C1FF72;
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    top: 80%;
-    left: 35%;
-    border-style: solid;
-    border-width: 9px;
-    border-color: #7ED957;
-    border-radius: 20px;
-    z-index: 1;
-    
-}
+
 
 body {
 background-color: #C1FF72;
@@ -69,6 +69,10 @@ transform: rotate(154deg);
 position: absolute;
 top: 40%;
 left: 0% ;
+border-top: solid;
+border-style: solid;
+border-color: #7ED957;
+border-width: 10px;
 }
 
 .Online {
@@ -89,23 +93,18 @@ left: 0% ;
     font-family: 'Open Sans', sans-serif;
 }
 
-.TextBut1{
-    font-weight: bold;
-    position: absolute;
-    top: 80%;
-    left: 35%;
-    font-size: 60px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-
+.TextBut1,
 .TextBut2 {
     color: black;
     font-weight: bold;
-    position: absolute;
-    top: 0%;
-    left: 50%;
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
-    width: 100px;
+    max-width: 100%;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    line-height: 100px; /* Align text vertically */
 }
