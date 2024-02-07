@@ -32,5 +32,3 @@ imageUploadArea.addEventListener("drop", function(e) {
         imageUpload.files = e.dataTransfer.files;
     }
 });
-
-

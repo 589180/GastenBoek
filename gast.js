@@ -8,8 +8,29 @@ function closeOverlay() {
     document.getElementById("overlay").style.display = "none";
 }
 
-// Event listener to open the overlay when the "Bericht Sturen" button is clicked
-document.getElementById("openOverlayButton").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default link behavior
+// Open the overlay automatically when the page loads
+window.addEventListener("load", function() {
     openOverlay(); // Call the openOverlay function
+});
+
+// Allow drag and drop for image upload
+const imageUpload = document.getElementById("image");
+const imageUploadArea = document.querySelector(".image-upload");
+
+imageUploadArea.addEventListener("dragover", function(e) {
+    e.preventDefault();
+    this.classList.add("dragover");
+});
+
+imageUploadArea.addEventListener("dragleave", function() {
+    this.classList.remove("dragover");
+});
+
+imageUploadArea.addEventListener("drop", function(e) {
+    e.preventDefault();
+    this.classList.remove("dragover");
+    const file = e.dataTransfer.files[0];
+    if (file.type.startsWith("image/")) {
+        imageUpload.files = e.dataTransfer.files;
+    }
 });
