@@ -1,0 +1,150 @@
+/* Styles for the plus button */
+.Button3 {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #7ED957;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.plusIcon {
+    font-size: 36px;
+}
+
+/* Styles for the overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjust the width here */
+    max-width: 500px; /* Set a maximum width */
+    overflow-x: auto; /* Add scrollbar if content exceeds width */
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #7ED957 ;
+    border-style: solid;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    left: 2%;   
+}
+
+.closeButton {
+    position: relative;
+    right: -95%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: #7ED957;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    
+}
+
+.overlay-content h2 {
+    margin-bottom: 20px;
+}
+
+.overlay-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Adjusted to align items to the left */
+    
+}
+
+.overlay-content label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Added margin for spacing */
+    
+}
+
+.overlay-content textarea {
+    height: 100px;
+    resize: vertical;
+    margin-bottom: 20px;
+    width: 100%; /* Added to occupy full width */
+
+}
+
+.overlay-content input[type="file"] {
+    margin-bottom: 20px;
+    width: 100%; /* Added to occupy full width */
+    
+    
+}
+
+/* Styles for the text box outline */
+.overlay-content input[type="text"],
+.overlay-content textarea{
+    border: 1px solid #7ED957; /* Change "your-desired-color" to the color you want */
+    border-radius: 5px;
+}
+
+.NavBar{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100px;
+    height: 99%;
+    border-radius: 5px;
+    border-color: #7ED957;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.NavBar1{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100px;
+    height: 13%;
+    border-radius: 5px;
+    border-color: #7ED957;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.Nav {
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 100;
+}
+
+.HomeBut1 {
+    text-decoration: none;
+    color: black;
+    z-index: 100;
+}

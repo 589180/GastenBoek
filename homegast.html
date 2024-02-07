@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
     <title>GastenBoek</title>
 </head>
 <body>
@@ -14,12 +13,15 @@
         <div class="GastenBoek"><p>GastenBoek</p></div>
     </div>
     <div class="Button1">
-        <a href="gast.html" class="TextBut1">Bericht Sturen</a>
+        <!-- Add an ID to target with JavaScript -->
+        <a href="gast.html" class="TextBut1" id="openOverlayButton">Bericht Sturen</a>
     </div>
     <div class="Button2">
         <a href="gast.html" class="TextBut2">Bericht Pagina</a>
     </div>    
     <div class="BackSlab"></div>
 </div>
+
+<script src="gast.js"></script> <!-- Include script.js for JavaScript functionality -->
 </body>
 </html>
