@@ -19,7 +19,6 @@
     font-size: 36px;
 }
 
-/* Styles for the overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -37,9 +36,9 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Adjust the width here */
-    max-width: 500px; /* Set a maximum width */
-    overflow-x: auto; /* Add scrollbar if content exceeds width */
+    width: 80%; 
+    max-width: 500px; 
+    overflow-x: auto; 
     border-radius: 20px;
     border-width: 5px;
     border-color: #7ED957 ;
@@ -79,14 +78,14 @@ h2 {
 .overlay-content form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Adjusted to align items to the left */
+    align-items: flex-start; 
     font-family: 'Open Sans', sans-serif;
     
 }
 
 .overlay-content label {
     font-weight: bold;
-    margin-bottom: 5px; /* Added margin for spacing */
+    margin-bottom: 5px; 
     font-family: 'Open Sans', sans-serif;
     
 }
@@ -95,23 +94,23 @@ h2 {
     height: 100px;
     resize: vertical;
     margin-bottom: 20px;
-    width: 100%; /* Added to occupy full width */
+    width: 100%; 
     font-family: 'Open Sans', sans-serif;
 
 }
 
 .overlay-content input[type="file"] {
     margin-bottom: 20px;
-    width: 100%; /* Added to occupy full width */
+    width: 100%; 
     font-family: 'Open Sans', sans-serif;
     
     
 }
 
-/* Styles for the text box outline */
+
 .overlay-content input[type="text"],
 .overlay-content textarea{
-    border: 1px solid #7ED957; /* Change "your-desired-color" to the color you want */
+    border: 1px solid #7ED957; 
     border-radius: 5px;
 }
 
@@ -133,7 +132,7 @@ h2 {
     left: 0%;
     width: 100px;
     height: 13%;
-    border-radius: 5px;
+    border-radius: 15px;
     border-color: #7ED957;
     border-style: solid;
     border-width: 5px;
@@ -152,6 +151,10 @@ h2 {
     text-decoration: none;
     color: black;
     z-index: 100;
+    position: absolute;
+    top: -18px;
+    left: 2px;
+
 }
 
 button[type="submit"] {
