@@ -1,8 +1,14 @@
-/* Styles for the plus button */
+
+body    {
+    margin: 0;
+    overflow-x: hidden;
+}
+.example::-webkit-scrollbar {
+    display: none;
+  }
+
 .Button3 {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+    margin-bottom: 2rem;
     width: 60px;
     height: 60px;
     background-color: #7ED957;
@@ -13,10 +19,7 @@
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-}
-
-.plusIcon {
-    font-size: 36px;
+    
 }
 
 .overlay {
@@ -115,10 +118,10 @@ h2 {
 }
 
 .NavBar{
-    position: absolute;
+   
     top: 0%;
     left: 0%;
-    width: 100px;
+    width: 7rem;
     height: 99%;
     border-radius: 5px;
     border-color: #7ED957;
@@ -127,24 +130,15 @@ h2 {
 }
 
 .NavBar1{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100px;
-    height: 13%;
-    border-radius: 15px;
-    border-color: #7ED957;
-    border-style: solid;
-    border-width: 5px;
+
 }
 
-.Nav {
-    position: absolute;
-    top: 5%;
-    left: 1%;
+.Nav_image {
+
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
     z-index: 100;
+
 }
 
 .HomeBut1 {
@@ -158,12 +152,70 @@ h2 {
 }
 
 button[type="submit"] {
-    background-color: #7ED957; /* Green background */
-    color: rgb(255, 255, 255); /* White text */
-    padding: 10px 20px; /* Padding */
-    border-width:  2px; /* No border */
+    background-color: #7ED957; 
+    color: rgb(255, 255, 255);
+    padding: 10px 20px; 
+    border-width:  2px; 
     border-style: solid;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Cursor on hover */
-    font-size: 16px; /* Font size */
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+.deskContainer {
+    display: flex;
+}
+.BerichtenBox {
+    overflow-y: auto; 
+    width: calc(100vw - 7rem); 
+    height: 100vh;
+    margin-left: 7rem; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    align-items: left; 
+}
+
+.Bericht {
+    width: 400px;
+    margin: 10px;
+    height: 250px; 
+    border-color: #7ED957;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+}
+
+#nav-logo  {
+    width: 5rem;
+}
+
+.side-nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 7rem; 
+    z-index: 100; 
+}
+
+.header-logo    {
+    height: 10rem;
+    margin: 0.5rem;
+}
+
+.Image {
+    max-width: 100%; /* Ensure the image does not exceed the width of the .Bericht container */
+    max-height: 100%; /* Ensure the image does not exceed the height of the .Bericht container */
+    position: absolute; /* Position the image relative to its containing .Bericht */
+    top: 0; /* Align the image to the top of the .Bericht container */
+    left: 0; /* Align the image to the left of the .Bericht container */
+    width: 100%; /* Ensure the image fills the entire width of the .Bericht container */
+    height: 100%; /* Ensure the image fills the entire height of the .Bericht container */
 }
