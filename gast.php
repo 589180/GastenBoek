@@ -27,7 +27,7 @@
             <div class="overlay-content">
                 <span class="closeButton" onclick="closeOverlay()">×</span>
                 <h2>Gastenboek Bericht</h2>
-                <form>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
                     <label for="name">Your Name:</label>
                     <input type="text" id="name" name="name" required>
                     <label for="message">Your Message:</label>
@@ -36,12 +36,20 @@
                     <label for="image">Optional Image:</label>
                     <input type="file" id="image" name="image" accept="image/*">
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" value="Submit">Submit</button> 
                 </form>
             </div>
         </div>
     
         <div class="BerichtenBox">
+            <?php
+                $jsonData = file_get_contents ('messages.json');
+
+                $data = json_decode($jsonData, true);
+                
+                  ?>
+
+        
             <div class="Bericht">
                 <div class="Image">
                 <img id="BerichtImg" src="/uploads/random1.png">
