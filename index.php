@@ -61,7 +61,7 @@
                 <img id="BerichtImg" src="<?php echo $bericht['image']; ?>">
             </div>
             <div class="name"><?php echo $name; ?></div>
-            <span class="date"><?php echo $time; ?></span>
+            <div class="date"><?php echo $time; ?></div>
             <div class="Message"><?php echo $message; ?></div>
         </div>
         <?php
