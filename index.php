@@ -29,7 +29,7 @@
                     <label for="name">Your Name:</label>
                     <input type="text" id="name" name="name" required>
                     <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" required maxlength="100"></textarea>
                     <div class="image-upload">
                     <label for="image">Optional Image:</label>
                     <input type="file" id="image" name="image" accept="image/*">
