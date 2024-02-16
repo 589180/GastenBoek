@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents('messages.json', $jsonData);
 
-    header("Location: gast.php");
+    header("Location: index.php");
     exit(); // Ensure script stops execution after redirection
 }
 ?>
