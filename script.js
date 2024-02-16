@@ -7,3 +7,4 @@ function closeOverlay() {
 }
 
 document.getElementById("plusButton").addEventListener("click", openOverlay);
+

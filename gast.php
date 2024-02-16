@@ -10,16 +10,14 @@
     <div class="deskContainer">
         <div class="side-nav">
             <div class="header-logo">
-                <a href="homegast.html">
-                    <img id="nav-logo" src="/uploads/home.png">
-                </a>
-            </div>
+                <a href="index.html">
+                    <img id="nav-logo" src="uploads/home.png">
+                </a></div>
             <div class="bottom-button">
                 <a id="click">
                    <div class="Button3" id="plusButton">
                   <div class="plusIcon">+</div>
                 </a>
-
             </div>
           </div>    
         </div>
@@ -36,54 +34,41 @@
                     <label for="image">Optional Image:</label>
                     <input type="file" id="image" name="image" accept="image/*">
                     </div>
-                    <button type="submit" value="Submit">Submit</button> 
+                    <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>
         </div>
-    
         <div class="BerichtenBox">
-            <?php
-                $jsonData = file_get_contents ('messages.json');
+    <?php
+    $jsonData = file_get_contents("messages.json");
+    $data = json_decode($jsonData, true);
 
-                $data = json_decode($jsonData, true);
-                
-                  ?>
+    $time = date('d-m-y H:i:s'); // Current time
 
-        
-            <div class="Bericht">
-                <div class="Image">
-                <img id="BerichtImg" src="/uploads/random1.png">
-                </div>
-                <div class="Date">
-                    26 Maart 2024 
-                </div>
-                <div class="Time">
-                    14:54 CET
-                </div>
-                <div class="Message">
-                    Lorem ipsum dolor sit amet. Est quia odit eum odio nulla aut internos nesciunt id laborum fugiat et cumque rerum. 
-                    Aut officia officiis et facere galisum ut galisum rerum qui veniam consequatur sit recusandae iure et maxime delectus?
-                    Est consequatur provident aut aspernatur pariatur non reprehenderit sequi.
-                </div>
+    foreach ($data as $bericht) {
+        // Extract message details from the $bericht array
+        $name = $bericht['name'];
+        $message = $bericht['message'];
+        $timestamp = $bericht['time']; // Assuming $time contains the Unix timestamp
+    
+        // Convert Unix timestamp to a human-readable date and time format
+        $time = date('d-m-y H:i:s', $timestamp);
+    
+        // Output the message details within HTML structure
+        ?>
+        <div class="Bericht">
+            <div class="Image">
+                <img id="BerichtImg" src="<?php echo $bericht['image']; ?>">
             </div>
-                <div class="Bericht">
-                        <div class="Image"></div>
-                        <div class="Date"></div>
-                        <div class="Time"></div>
-                        <div class="Message"></div>
-                </div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-                <div class="Bericht"></div>
-            </div>
+            <div class="name"><?php echo $name; ?></div>
+            <span class="date"><?php echo $time; ?></span>
+            <div class="Message"><?php echo $message; ?></div>
         </div>
+        <?php
+    }
+    ?>
+    </div>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
