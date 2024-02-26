@@ -28,7 +28,7 @@
 
   
   .Button2 { grid-area: Button2;
-    background-color: #C1FF72;
+    background-color: #ffffff;
     width: 250px;
     height: 100px;
     position: absolute;
@@ -46,20 +46,7 @@ body {
 background-color: #C1FF72;
 overflow: hidden;
 z-index: -1;
-}
-
-.BackSlab {
-background-color: white;
-width: 2000px;
-height: 670px;
-transform: rotate(154deg);
-position: absolute;
-top: 40%;
-left: 0% ;
-border-top: solid;
-border-style: solid;
-border-color: #7ED957;
-border-width: 10px;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 .Online {
@@ -137,7 +124,7 @@ border-width: 10px;
     }
       
       .Button2 { grid-area: Button2;
-        background-color: #C1FF72;
+        background-color: #ffffff;
         width: 150px;
         height: 75px;
         position: absolute;
@@ -154,20 +141,7 @@ border-width: 10px;
         background-color: #C1FF72;
         overflow: hidden;
         z-index: -1;
-    }
-    
-    .BackSlab {
-        background-color: white;
-        width: 2000px;
-        height: 670px;
-        transform: rotate(154deg);
-        position: absolute;
-        top: -10%;
-        left: -30% ;
-        border-top: solid;
-        border-style: solid;
-        border-color: #7ED957;
-        border-width: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     .Online {
@@ -183,7 +157,7 @@ border-width: 10px;
         font-weight: bold;
         position: absolute;
         top: 6%;
-        left: 25%;
+        left: 32%;
         font-size: 28px;
         font-family: 'Open Sans', sans-serif;
     }
@@ -246,7 +220,7 @@ border-width: 10px;
     }
       
       .Button2 { grid-area: Button2; 
-        background-color: #C1FF72;
+        background-color: #ffffff;
         width: 400px;
         height: 80px;
         position: absolute;
@@ -262,20 +236,7 @@ border-width: 10px;
         background-color: #C1FF72;
         overflow: hidden;
         z-index: -1;
-    }
-    
-    .BackSlab {
-        background-color: white;
-        width: 2000px;
-        height: 670px;
-        transform: rotate(154deg);
-        position: absolute;
-        top: -10%;
-        left: -30% ;
-        border-top: solid;
-        border-style: solid;
-        border-color: #7ED957;
-        border-width: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     .Online {
@@ -300,7 +261,7 @@ border-width: 10px;
     .TextBut2 {
         color: black;
         font-weight: bold;
-        font-size: 5px;
+        font-size: 20px;
         font-family: 'Open Sans', sans-serif;
         max-width: 100%;
         white-space: nowrap;
