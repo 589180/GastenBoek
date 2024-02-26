@@ -11,58 +11,68 @@
         <div class="side-nav">
             <div class="header-logo">
                 <a href="index.html">
-                    <img id="nav-logo" src="uploads/home.png">
-                </a></div>
-            <div class="bottom-button">
-                <a id="click">
-                   <div class="Button3" id="plusButton">
-                  <div class="plusIcon">+</div>
+                    <img id="nav-logo" src="uploads/home.png"> <!-- Link to home page -->
                 </a>
             </div>
-          </div>    
+            <div class="bottom-button">
+                <a id="click">
+                    <div class="Button3" id="plusButton"> <!-- Button to open message submission form -->
+                        <div class="plusIcon">+</div> <!-- Icon for the button -->
+                    </div>
+                </a>
+            </div>
         </div>
         <div class="overlay">
             <div class="overlay-content">
-                <span class="closeButton" onclick="closeOverlay()">×</span>
-                <h2>Gastenboek Bericht</h2>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" required maxlength="100"></textarea>
-                    <div class="image-upload">
-                    <label for="image">Optional Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*">
+                <span class="closeButton" onclick="closeOverlay()">×</span> <!-- Button to close the overlay -->
+                <?php
+                session_start(); // Start or resume a session to store data across multiple pages
+                
+                // Check if a message has already been sent in this session
+                if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
+                    echo "<h2>You have already sent a message. You can't send another one yet.</h2>"; // Display a message if message has already been sent
+                } else {
+                ?>
+                <h2>Gastenboek Bericht</h2> <!-- Title for the message form -->
+                <form action="upload.php" method="post" enctype="multipart/form-data"> <!-- Form for submitting messages -->
+                    <label for="name">Your Name:</label> <!-- Input field label for user's name -->
+                    <input type="text" id="name" name="name" required> <!-- Input field for user's name -->
+                    <label for="message">Your Message:</label> <!-- Input field label for user's message -->
+                    <textarea id="message" name="message" required maxlength="100"></textarea> <!-- Input field for user's message -->
+                    <div class="image-upload"> <!-- Container for optional image upload -->
+                        <label for="image">Optional Image:</label> <!-- Label for image upload -->
+                        <input type="file" id="image" name="image" accept="image/*"> <!-- Input field for uploading image -->
                     </div>
-                    <button type="submit" value="Submit">Submit</button>
+                    <button type="submit" value="Submit">Submit</button> <!-- Submit button for sending the message -->
                 </form>
+                <?php } ?>
             </div>
         </div>
         <div class="BerichtenBox">
     <?php
-    $jsonData = file_get_contents("messages.json");
-    $data = json_decode($jsonData, true);
+    $jsonData = file_get_contents("messages.json"); // Read JSON data from file
+    $data = json_decode($jsonData, true); // Decode JSON data into associative array
 
-    $time = date('d-m-y H:i:s'); // Current time
+    $time = date('d-m-y H:i:s'); // Get current time
 
-    foreach ($data as $bericht) {
+    foreach ($data as $bericht) { // Loop through each message in the data
         // Extract message details from the $bericht array
-        $name = $bericht['name'];
-        $message = $bericht['message'];
-        $timestamp = $bericht['time']; // Assuming $time contains the Unix timestamp
-    
+        $name = $bericht['name']; // Get the sender's name
+        $message = $bericht['message']; // Get the message content
+        $timestamp = $bericht['time']; // Get the Unix timestamp of the message
+
         // Convert Unix timestamp to a human-readable date and time format
-        $time = date('d-m-y H:i:s', $timestamp);
-    
+        $time = date('d-m-y H:i:s', $timestamp); // Convert Unix timestamp to date and time format
+
         // Output the message details within HTML structure
         ?>
-        <div class="Bericht">
-            <div class="Image">
-                <img id="BerichtImg" src="<?php echo $bericht['image']; ?>">
+        <div class="Bericht"> <!-- Container for each individual message -->
+            <div class="Image"> <!-- Container for message image -->
+                <img id="BerichtImg" src="<?php echo $bericht['image']; ?>"> <!-- Display message image -->
             </div>
-            <div class="name"><?php echo $name; ?></div>
-            <div class="date"><?php echo $time; ?></div>
-            <div class="Message"><?php echo $message; ?></div>
+            <div class="name"><?php echo $name; ?></div> <!-- Display message sender's name -->
+            <div class="date"><?php echo $time; ?></div> <!-- Display message timestamp -->
+            <div class="Message"><?php echo $message; ?></div> <!-- Display message content -->
         </div>
         <?php
     }
@@ -70,6 +80,6 @@
     </div>
     </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Include JavaScript file -->
 </body>
 </html>

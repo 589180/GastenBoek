@@ -1,5 +1,24 @@
 <?php
+session_start();
+
+// Check if the user's IP address has already sent a message
+if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
+    // Redirect the user back to the index page or show a message
+    header("Location: index.php");
+    exit; // Stop further execution
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the user's IP address
+    $user_ip = $_SERVER['REMOTE_ADDR'];
+
+    // Check if the user's IP address has already sent a message
+    if (file_exists('messages/' . $user_ip . '.txt')) {
+        // Redirect the user back to the index page or show a message
+        header("Location: index.php");
+        exit; // Stop further execution
+    }
+
     $name = $_POST['name'];
     $message = $_POST['message'];
     $time = time();
@@ -22,7 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents('messages.json', $jsonData);
 
+    // Create a file to mark that this IP address has sent a message
+    file_put_contents('messages/' . $user_ip . '.txt', '');
+
+    // Set session variable to indicate that a message has been sent in this session
+    $_SESSION['message_sent'] = true;
+
     header("Location: index.php");
-    exit(); // Ensure script stops execution after redirection
+    exit; // Ensure script stops execution after redirection
 }
 ?>
