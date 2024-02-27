@@ -30,7 +30,7 @@
                 
                 // Check if a message has already been sent in this session
                 if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
-                    echo "<h2>You have already sent a message. You can't send another one yet.</h2>"; // Display a message if message has already been sent
+                    echo "<h2>Je hebt al een bericht gestuurd. Je mag maar één bericht sturen per sessie.</h2>"; // Display a message if message has already been sent
                 } else {
                 ?>
                 <h2>Gastenboek Bericht</h2> <!-- Title for the message form -->
