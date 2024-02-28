@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+// Function to sanitize user input
+function sanitizeInput($input) {
+    // Remove HTML tags
+    $input = strip_tags($input);
+    // Convert special characters to HTML entities
+    $input = htmlspecialchars($input);
+    return $input;
+}
+
 // Check if the user's IP address has already sent a message
 if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
     // Redirect the user back to the index page or show a message
@@ -19,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit; // Stop further execution
     }
 
-    $name = $_POST['name'];
-    $message = $_POST['message'];
+    // Sanitize input
+    $name = sanitizeInput($_POST['name']);
+    $message = sanitizeInput($_POST['message']);
     $time = time();
 
     // Handle image upload
