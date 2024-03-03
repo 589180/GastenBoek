@@ -277,17 +277,17 @@ padding: 18px
 
 @media only screen and (max-width: 600px) {
 .container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0fr 2fr 1fr;
+    grid-template-rows: -3fr 0.2fr 0.2fr 2fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "image image . ."
-      "image image name name"
-      "message message message message"
-      "message message message message";
+      "Image Image name Date"
+      "Image Image name Date"
+      "Message Message Message Message"
+      "Message Message Message Message";
   }
   
   .date {
@@ -301,14 +301,15 @@ padding: 18px
     align-items: center;
     font-size: 15px;
     font-weight: bold;
-    margin-left: 15%;
-    margin-top: 50%;
+    padding: 22px
+
+    
     }
   
   .image { grid-area: image; }
   
   .Message {
-    margin-top: 5%;
+    margin-top: -10%;
     margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
     
@@ -325,7 +326,7 @@ padding: 18px
 }
 
 .date {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     justify-content: right;
     align-items: right;    
