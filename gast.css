@@ -1,7 +1,7 @@
 
 .Bericht {  display: grid;
-    grid-template-columns: 1fr 0.2fr 2fr 1fr;
-    grid-template-rows: 1fr 0.2fr 1fr 1.8fr;
+    grid-template-columns: 1fr 0fr 2fr 1fr;
+    grid-template-rows: -3fr 0.2fr 0.2fr 2fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     gap: 0px 0px;
@@ -21,7 +21,15 @@
       border-width: 5px;
   }
   
-  .Image { grid-area: Image; }
+  .Image { grid-area: Image; 
+    border-color: #7ED957;
+    border-style: solid;
+    border-width: 5px;
+    border-right: 5px solid #7ED957;
+    border-top: none;
+    border-bottom: 5px solid #7ED957;
+    border-left: none;
+}
   
   .Date { grid-area: Date;
     font-size: 15px;
@@ -29,8 +37,10 @@
  }
 
   .Message { grid-area: Message; 
-
+    
     margin: 10px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
 }
 .example::-webkit-scrollbar {
     display: none;
@@ -221,35 +231,33 @@ button[type="submit"] {
 }
 
 #BerichtImg {
-    height: 90px;
-    width: 90px;
+    height: 110px;
+    width: 110px;
+    
     
 }
 
 .Image {
-    height: 90px;
-    width: 90px;
+    height: 110px;
+    width: 110px;
+
 }
 
-.Message {
-    margin-top: 5%;
-    margin-left: 5%;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-top: #7ED957;
-    border-width: 5px;
-    border-style: solid;
-    border-left: none;
-    border-bottom: none;
-    border-right: none;
-}
 
 .name {
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-self: center;
 font-size: 20px;
 font-weight: bold;
+border-color: #7ED957;
+border-style: solid;
+border-width: 5px;
+border-right: none;
+border-top: none;
+border-bottom: 5px solid #7ED957;
+border-left: none;
+padding: 18px
 }
 
 .date {
@@ -257,11 +265,15 @@ font-weight: bold;
     font-weight: bold;
     justify-content: right;
     align-items: right;    
+    border-color: #7ED957;
+    border-style: solid;
+    border-width: 5px;
+    border-right: none;
+    border-top: none;
+    border-bottom: 5px solid #7ED957;
+    border-left: 5px solid #7ED957;
 }
 
-.Message {
-    margin: 10px;
-}
 
 @media only screen and (max-width: 600px) {
 .container {  display: grid;
@@ -327,8 +339,8 @@ font-weight: bold;
 #BerichtImg {
     height: 90px;
     width: 90px;
-    border-right: 2px;
-    border-bottom: 2px;
+    border-right: 5px;
+    border-bottom: 5px;
     border-color: #7ED957;
     border-style: solid;
     border-left: none;
