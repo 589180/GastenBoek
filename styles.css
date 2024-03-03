@@ -26,7 +26,6 @@
     border-radius: 20px;
 }
 
-  
   .Button2 { grid-area: Button2;
     background-color: #ffffff;
     width: 250px;
@@ -40,7 +39,6 @@
     border-radius: 20px;
     z-index: 1;
 }
-
 
 body {
 background-color: #C1FF72;
@@ -90,7 +88,6 @@ font-family: Arial, Helvetica, sans-serif;
 
 }
 
-/* Media query for phones */
 @media only screen and (max-width: 600px) {
     .container {  display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -116,7 +113,6 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;        
     }
       
-      
       .Button2 { grid-area: Button2;
         background-color: #ffffff;
         width: 150px;
@@ -129,7 +125,6 @@ font-family: Arial, Helvetica, sans-serif;
         border-color: #7ED957;
         border-radius: 20px;
         z-index: 1;
-        
     }
       
     body {
@@ -172,6 +167,7 @@ font-family: Arial, Helvetica, sans-serif;
         text-decoration: none; 
         line-height: 100px; 
     }
+
     #openBerichtenPaginaButton {
         font-size: 15px;
         position: absolute;
@@ -179,8 +175,6 @@ font-family: Arial, Helvetica, sans-serif;
     }
 }
 
-
-/* Media query for tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .container {  display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -233,6 +227,7 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;
         z-index: 1;
     }
+
     body {
         background-color: #C1FF72;
         overflow: hidden;
@@ -272,7 +267,6 @@ font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         text-decoration: none; 
         line-height: 100px; 
-        
     }
 }
 

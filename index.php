@@ -13,7 +13,7 @@
             <div class="header-logo">
                 <a href="index.html">
                     <img id="nav-logo" src="uploads/home.png"> <!-- Link to home page -->
-                </a>
+            </a>
             </div>
             <div class="bottom-button">
                 <a id="click">

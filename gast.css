@@ -18,9 +18,9 @@
     border-style: solid;
     border-radius: 5px;
     border-width: 5px;
-  }
+}
   
-  .Image { grid-area: Image; 
+.Image { grid-area: Image; 
     border-color: #7ED957;
     border-style: solid;
     border-width: 5px;
@@ -28,24 +28,24 @@
     border-top: none;
     border-bottom: 5px solid #7ED957;
     border-left: none;
-    }
+}
   
-  .Date { grid-area: Date;
+.Date { grid-area: Date;
     font-size: 15px;
     font-weight: bold;
-    }
+}
 
-  .Message { grid-area: Message; 
+.Message { grid-area: Message; 
     margin: 10px;
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;
     max-width: 370px;
     word-wrap: break-word;
-    }
+}
 
-    .example::-webkit-scrollbar {
+.example::-webkit-scrollbar {
     display: none;
-    }
+}
 
 body {
     font-family: 'Oswald', sans-serif;
@@ -149,7 +149,6 @@ h2 {
     font-family: 'Open Sans', sans-serif;    
 }
 
-
 .overlay-content input[type="text"],
 .overlay-content textarea{
     border: 1px solid #7ED957; 
@@ -193,9 +192,11 @@ button[type="submit"] {
     cursor: pointer; 
     font-size: 16px; 
 }
+
 .deskContainer {
     display: flex;
 }
+
 .BerichtenBox {
     overflow-y: auto; 
     width: calc(100vw - 7rem); 
@@ -232,17 +233,13 @@ button[type="submit"] {
 
 #BerichtImg {
     height: 110px;
-    width: 110px;
-    
-    
+    width: 110px; 
 }
 
 .Image {
     height: 110px;
     width: 110px;
-
 }
-
 
 .name {
 display: flex;
@@ -295,35 +292,31 @@ padding: 18px
       border-width: 5px;
   }
   
-  .date {
+.date {
     font-size: 10px;
     font-weight: bold;
     }
   
-  .name {  
+.name {  
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
     font-weight: bold;
     padding: 10px
-
-    
-    }
+}
   
-  .image { grid-area: image; }
+.image { grid-area: image; }
   
-  .Message {
+.Message {
     margin-top: -7%;
     margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 370px;
-    word-wrap: break-word;
-   
-    
-  }
+    word-wrap: break-word;  
+}
   
-  body    {
+body {
     margin: 0;
     overflow-x: hidden;
 }
@@ -340,7 +333,7 @@ padding: 18px
     align-items: right;    
 }
 
-.header-logo    {
+.header-logo {
     height: 10rem;
     margin: 0.5rem;
 }
@@ -357,7 +350,6 @@ padding: 18px
   
 }
 
-
 .side-nav {
     position: fixed; 
     top: 0; 
@@ -372,7 +364,7 @@ padding: 18px
     height: 100vh;
     width: 2rem; 
     z-index: 100; 
-    }
+}
 
 .deskContainer {
     display: flex;
@@ -389,7 +381,6 @@ padding: 18px
 }
 
 .Bericht {
-    
     width: 400px;
     margin: 0px;
     height: 250px; 
@@ -397,9 +388,7 @@ padding: 18px
     border-style: solid;
     border-radius: 5px;
     border-width: 5px;
-
 }
-
 
 #nav-logo  {
     width: 2rem;
