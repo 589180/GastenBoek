@@ -7,9 +7,3 @@ function closeOverlay() {
 }
 
 document.getElementById("plusButton").addEventListener("click", openOverlay);
-
-function limitTextarea(element) {
-    if (element.value.length > 400) {
-        element.value = element.value.substring(0, 100);
-    }
-}

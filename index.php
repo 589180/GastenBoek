@@ -37,9 +37,9 @@
                 <h2>Gastenboek Bericht</h2> <!-- Title for the message form -->
                 <form action="upload.php" method="post" enctype="multipart/form-data"> <!-- Form for submitting messages -->
                     <label for="name">Your Name:</label> <!-- Input field label for user's name -->
-                    <input type="text" id="name" name="name" required> <!-- Input field for user's name -->
+                    <input type="text" id="name" name="name" required maxlength="14"> <!-- Input field for user's name -->
                     <label for="message">Your Message:</label> <!-- Input field label for user's message -->
-                    <textarea id="message" name="message" required maxlength="100"></textarea> <!-- Input field for user's message -->
+                    <textarea id="message" name="message" required maxlength="300"></textarea> <!-- Input field for user's message -->
                     <div class="image-upload"> <!-- Container for optional image upload -->
                         <label for="image">Optional Image:</label> <!-- Label for image upload -->
                         <input type="file" id="image" name="image" accept="image/*"> <!-- Input field for uploading image -->
