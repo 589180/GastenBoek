@@ -19,29 +19,38 @@
   .Title { grid-area: Title; 
     background-color: white;
     width: 500px;
-    height: 175px;
+    height: 190px;
     border-style: solid;
     border-width: 9px;
-    border-color: #7ED957;
+    border-color: #f1d102ac;
     border-radius: 20px;
 }
 
-  .Button2 { grid-area: Button2;
+.Button2 {
+    grid-area: Button2;
     background-color: #ffffff;
     width: 250px;
     height: 100px;
     position: absolute;
     top: 80%;
-    left: 40%;
+    left: 35%;
     border-style: solid;
     border-width: 9px;
-    border-color: #7ED957;
     border-radius: 20px;
     z-index: 1;
+    /* Set each side's border color using gradients to simulate rotation */
+    border-top-color: #235789;
+    border-right-color: #235789;
+    border-bottom-color: #F1D302;
+    border-left-color: #F1D302;
+    /* Adjust the gradient direction to match the desired rotation */
+    border-image: linear-gradient(to right, #F1D302, #F1D302) 0 0 100% 0, linear-gradient(to bottom, #235789, #235789) 10 100% 0 0; /* Adjust the colors and direction as needed */
 }
 
+
+
 body {
-background-color: #C1FF72;
+background-color: #ffffff;
 overflow: hidden;
 z-index: -1;
 font-family: Arial, Helvetica, sans-serif;
@@ -50,19 +59,16 @@ font-family: Arial, Helvetica, sans-serif;
 .Online {
     font-weight: bold;
     position: absolute;
-    top: -5%;
-    left: 10%;
+    align-self: left;
+    color: #020100;
     font-size: 60px;
     font-family: 'Open Sans', sans-serif;
+    padding: 10px;
 }
 
-.GastenBoek {
-    font-weight: bold;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-size: 60px;
-    font-family: 'Open Sans', sans-serif;
+.Online p {
+    margin: 0; 
+    padding: 0; 
 }
 
 .TextBut1,
@@ -84,8 +90,32 @@ font-family: Arial, Helvetica, sans-serif;
 #openBerichtenPaginaButton {
     font-size: 30px;
     position: absolute;
-    top: -40%
+    top: -30%
 
+}
+
+#pyramid {
+    width: 0;
+    border-left: 500px dotted transparent;
+    border-right: 900px solid transparent;
+    border-bottom: 1000px solid #F1D302;
+    position: absolute; /* changed to fixed to keep it at the top left even when scrolling */
+    z-index: -1;
+    transform: rotate(90deg); /* corrected from 'rotate' to 'transform' */
+    top: -50%; /* set to 0 to align with the top of the screen */
+    left: -15%; 
+}
+
+#pyramid2 {
+    width: 0;
+    border-left: 500px dotted transparent;
+    border-right: 900px solid transparent;
+    border-bottom: 1000px solid #235789;
+    position: absolute; /* changed to fixed to keep it at the top left even when scrolling */
+    z-index: -1;
+    transform: rotate(15deg); /* corrected from 'rotate' to 'transform' */
+    top: 10%; /* set to 0 to align with the top of the screen */
+    left: 70%; 
 }
 
 @media only screen and (max-width: 600px) {
