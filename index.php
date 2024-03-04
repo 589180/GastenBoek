@@ -27,13 +27,14 @@
             <div class="overlay-content">
                 <span class="closeButton" onclick="closeOverlay()">×</span> <!-- Button to close the overlay -->
                 <?php
-                session_start(); // Start or resume a session to store data across multiple pages
-                
-                // Check if a message has already been sent in this session
-                if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
-                    echo "<h2>Je hebt al een bericht gestuurd. Je mag maar één bericht sturen per sessie.</h2>"; // Display a message if message has already been sent
-                } else {
+                    session_start(); // Start een nieuwe sessie of hervat een bestaande sessie om gegevens over meerdere pagina's te behouden
+
+                    // Controleer of er al een bericht is verzonden in deze sessie
+                    if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
+                        echo "<h2>Je hebt al een bericht gestuurd. Je mag maar één bericht sturen per sessie.</h2>"; // Als er al een bericht is verzonden, toon dan een bericht aan de gebruiker
+                    } else { // Als de waarde niet true is dan opent hij het formulier.
                 ?>
+
                 <h2>Gastenboek Bericht</h2> <!-- Title for the message form -->
                 <form action="upload.php" method="post" enctype="multipart/form-data"> <!-- Form for submitting messages -->
                     <label for="name">Jou naam:</label> <!-- Input field label for user's name -->

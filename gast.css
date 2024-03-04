@@ -272,6 +272,9 @@ padding: 18px
     border-left: 5px solid #7ED957;
 }
 
+.plusIcon {
+    font-size: 50px;
+}
 
 @media only screen and (max-width: 600px) {
 .container {  display: grid;
@@ -320,6 +323,11 @@ body {
     margin: 0;
     overflow-x: hidden;
 }
+
+.plusIcon {
+    font-size: 30px;
+}
+
 
 .Image {
     height: 92px;
