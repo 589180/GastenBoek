@@ -25,7 +25,7 @@
         </div>
         <div class="overlay">
             <div class="overlay-content">
-                <span class="closeButton" onclick="closeOverlay()">×</span> <!-- Button to close the overlay -->
+            <span class="closeButton" onclick="closeOverlay()" ontouchstart="closeOverlay()">×</span>
                 <?php
                     session_start(); // Start een nieuwe sessie of hervat een bestaande sessie om gegevens over meerdere pagina's te behouden
 
