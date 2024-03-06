@@ -1,79 +1,59 @@
 <?php
 session_start();
 
-// Santize zorgt ervoor dat ongelidge tekens worden verwijderd. 
 function sanitizeInput($input) {
-    // Verwijdert HTML- en PHP-tags uit de invoer
     $input = strip_tags($input); 
-    // Voorkomt dat HTML-code wordt uitgevoerd bij het weergeven van gebruikersinvoer.
     $input = htmlspecialchars($input);
-    // Geeft de gesaneerde invoer terug voor verdere verwerking in de applicatie.
     return $input;
+    // Zorgt ervoor dat er geen code in the forum kan worden geinject 
 }
 
 if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
-    // Controleert of de sessievariabele 'message_sent' 
-    // is ingesteld en of deze de waarde true heeft
+    // Controleert of de sessievariabele 'message_sent' is ingesteld en of deze 'true' is.
+    // Als 'message_sent' al true is, betekent dit dat het bericht al is verzonden.
+    // Verder uitvoeren van code wordt voorkomen om te voorkomen dat hetzelfde bericht meerdere keren wordt verzonden.
+
 
     header("Location: index.php");
-    // Als 'message_sent' al true is (wat betekent dat het bericht al is verzonden), 
-    // wordt de gebruiker teruggestuurd naar de indexpagina.
-
     exit;
-    // Stop de verdere uitvoering van de code om te voorkomen dat andere 
-    // instructies na deze worden uitgevoerd,
-    // aangezien de gebruiker al wordt omgeleid.
+    // Herlaad de pagina index.php
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Controleert of het verzoeksmethode POST is, wat betekent dat er gegevens zijn verzonden vanuit een formulier.
-
+    // Controleert of het huidige verzoek een POST-verzoek is.
+    // REQUEST METHOD: Controleren hoe gegevens zijn verzonden vanaf een webpagina
     $user_ip = $_SERVER['REMOTE_ADDR'];
-    // Haalt het IP-adres van de gebruiker op van $_SERVER superglobale variabele.
-    // $_SERVER['REMOTE_ADDR'] bevat het IP-adres van de gebruiker die het verzoek heeft ingediend.
+    // Haalt het IP-adres op van de gebruiker die het verzoek heeft ingediend.
+    //REMOTE_ADDR: bevat het IP-adres van de huidige client
+
 
     if (file_exists('messages/' . $user_ip . '.txt')) {
-        // Controleert of er al een bestand bestaat met de naam 'messages/{user_ip}.txt'.
-        // Dit wordt gebruikt om te bepalen of het IP-adres van de gebruiker al een bericht heeft verzonden.
-
-        // Als het bestand al bestaat (wat betekent dat het IP-adres al een bericht heeft verzonden),
-        // wordt de gebruiker onmiddellijk omgeleid naar de indexpagina.
+        // Controleert of er al een bestand bestaat met de naam '{user_ip}.txt' in de map 'messages/'.
+        
         header("Location: index.php");
+        // Als het bestand al bestaat (wat betekent dat het IP-adres al een bericht heeft verzonden),
+        // wordt de gebruiker omgeleid naar de indexpagina.
 
-        // Stopt de verdere uitvoering van de code om te voorkomen dat er extra acties worden ondernomen nadat de gebruiker is omgeleid.
         exit;
     }
-
+    
+    // gegevens op te halen die zijn verzonden via een POST-verzoek.
     $name = sanitizeInput($_POST['name']);
-    // Haalt de waarde van de formuliervariabele 'name' op via POST,
-    // sanitizeInput() wordt gebruikt om de invoer te saniteren.
-
     $message = sanitizeInput($_POST['message']);
-    // Haalt de waarde van de formuliervariabele 'message' op via POST,
-    // sanitizeInput() wordt gebruikt om de invoer te saniteren.
-
     $time = time();
-    // Genereert een tijdstempel voor het verzonden bericht.
 
 
     $image = $_FILES['image'];
-    // Haalt de geüploade bestandsgegevens op van het 'image' bestandsveld van het formulier.
-    // Deze gegevens bevatten informatie zoals bestandsnaam, type, tijdelijke locatie op de server, etc.
-    
+    // Haalt de informatie van het geüploade bestand op uit de $_FILES array en wijst deze toe aan de variabele $image.
     $imagePath = 'uploads/' . basename($image['name']);
-    // Bepaalt het pad waar het geüploade bestand zal worden opgeslagen.
-    // Hier wordt het pad ingesteld als 'uploads/' (een map op de server) plus de basennaam van het geüploade bestand.
-
+    // Creëert het pad waar het geüploade bestand zal worden opgeslagen. De map 'uploads/' wordt gebruikt om alle geüploade bestanden te bewaren. De bestandsnaam wordt verkregen met behulp van basename()
     move_uploaded_file($image['tmp_name'], $imagePath);
-    // Verplaatst het geüploade bestand van de tijdelijke locatie naar de definitieve locatie.
+    // Verplaatst het geüploade bestand van de tijdelijke locatie (aangegeven door $_FILES['image']['tmp_name']) naar de definitieve locatie (bepaald door $imagePath). Dit zorgt ervoor dat het geüploade bestand permanent wordt opgeslagen op de server.
 
 
     $jsonData = file_get_contents('messages.json');
-    // Leest de inhoud van 'messages.json' en slaat deze op in $jsonData.
-
     $data = json_decode($jsonData, true);
-    // Decodeert $jsonData van JSON naar een PHP-array en slaat het op in $data.
-
+    // Decodes the JSON string into a PHP associative array
 
     $data[] = [
         'name' => $name,
@@ -81,26 +61,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'time' => $time,
         'image' => $imagePath 
     ];
-    // Voegt een nieuw element toe aan de array $data met de gegeven 'name', 'message', 'time', en 'image' waarden.
-    
+// Voegt een nieuwe associatieve array toe aan de $data
 
-    $jsonData = json_encode($data, JSON_PRETTY_PRINT);
-    // Encodeert $data naar JSON en behoudt opmaak.
+$jsonData = json_encode($data, JSON_PRETTY_PRINT);
+// De bijgewerkte berichtgegevens worden geconverteerd naar JSON-formaat en netjes geformatteerd.
+file_put_contents('messages.json', $jsonData);
+// De JSON-gegevens worden opgeslagen in het bestand 'messages.json'.
+file_put_contents('messages/' . $user_ip . '.txt', '');
+// Er wordt een leeg tekstbestand gemaakt om aan te geven dat een bericht vanaf dit IP-adres is verzonden.
 
-    file_put_contents('messages.json', $jsonData);
-    // Schrijft de JSON-gegevens naar 'messages.json'.
-
-    file_put_contents('messages/' . $user_ip . '.txt', '');
-    // Creëert een leeg bestand om te markeren dat een bericht is verzonden vanaf het IP-adres van de gebruiker.
 
     $_SESSION['message_sent'] = true;
-    // Markeert dat er een bericht is verzonden in deze sessie.
-
     header("Location: index.php");
-    // Stuurt de gebruiker door naar de indexpagina.
-
     exit;
-    // Stopt de verdere uitvoering van de PHP-code na het omleiden van de gebruiker.
-
+    // Als bericht is gestuurd herlaad dan index.php
 }
 ?>
