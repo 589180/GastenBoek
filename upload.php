@@ -9,9 +9,10 @@ function sanitizeInput($input) {
 }
 
 if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
-    // Controleert of de sessievariabele 'message_sent' is ingesteld en of deze 'true' is.
-    // Als 'message_sent' al true is, betekent dit dat het bericht al is verzonden.
-    // Verder uitvoeren van code wordt voorkomen om te voorkomen dat hetzelfde bericht meerdere keren wordt verzonden.
+   // && operator combineert twee voorwaarden
+   // Isset in PHP controleert of een variabele is ingesteld en niet null is. 
+   // Het retourneert true als de variabele is ingesteld en niet null is
+
 
 
     header("Location: index.php");
@@ -31,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Controleert of er al een bestand bestaat met de naam '{user_ip}.txt' in de map 'messages/'.
         
         header("Location: index.php");
-        // Als het bestand al bestaat (wat betekent dat het IP-adres al een bericht heeft verzonden),
-        // wordt de gebruiker omgeleid naar de indexpagina.
+        // Als het bestand al bestaad wordt de gebruiker omgeleid naar index.php
 
         exit;
     }
@@ -44,16 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $image = $_FILES['image'];
-    // Haalt de informatie van het geüploade bestand op uit de $_FILES array en wijst deze toe aan de variabele $image.
+   
     $imagePath = 'uploads/' . basename($image['name']);
-    // Creëert het pad waar het geüploade bestand zal worden opgeslagen. De map 'uploads/' wordt gebruikt om alle geüploade bestanden te bewaren. De bestandsnaam wordt verkregen met behulp van basename()
+
     move_uploaded_file($image['tmp_name'], $imagePath);
-    // Verplaatst het geüploade bestand van de tijdelijke locatie (aangegeven door $_FILES['image']['tmp_name']) naar de definitieve locatie (bepaald door $imagePath). Dit zorgt ervoor dat het geüploade bestand permanent wordt opgeslagen op de server.
-
-
+ 
     $jsonData = file_get_contents('messages.json');
+    // Decode the JSON content into a PHP associative array
     $data = json_decode($jsonData, true);
-    // Decodes the JSON string into a PHP associative array
+
 
     $data[] = [
         'name' => $name,

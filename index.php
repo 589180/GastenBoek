@@ -40,7 +40,7 @@
                     <label for="name">Jou naam:</label> <!-- Input field label for user's name -->
                     <input type="text" id="name" name="name" required maxlength="8"> <!-- Input field for user's name -->
                     <label for="message">Jou bericht:</label> <!-- Input field label for user's message -->
-                    <textarea id="message" name="message" required maxlength="250"></textarea> <!-- Input field for user's message -->
+                    <textarea id="message" name="message" required maxlength="250"></textarea> 
                     <div class="image-upload"> <!-- Container for optional image upload -->
                         <label for="image">Optionele afbeelding:</label> <!-- Label for image upload -->
                         <input type="file" id="image" name="image" accept="image/*"> <!-- Input field for uploading image -->
