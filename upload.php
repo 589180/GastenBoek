@@ -13,8 +13,6 @@ if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
    // Isset in PHP controleert of een variabele is ingesteld en niet null is. 
    // Het retourneert true als de variabele is ingesteld en niet null is
 
-
-
     header("Location: index.php");
     exit;
     // Herlaad de pagina index.php
