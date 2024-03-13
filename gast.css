@@ -325,12 +325,10 @@ border-bottom: none;
           "Image Message Message Message"
           "Name Message Message Message"
           "Date Message Message Message";
-        width: 600px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 10px;
-        margin-left: 33px;
-        height: 250px; 
+        width: 100%; /* Set width to occupy 90% of the screen */
+        margin: 10px auto; /* Center align and add margin */
+        height: auto; /* Adjust height automatically */
+        height: auto; 
         border-color: #235789;
         border-style: solid;
         border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
@@ -387,6 +385,7 @@ border-bottom: none;
     }
     .Button3 {
         margin-bottom: 2rem;
+        margin-right: 1rem;
         width: 60px;
         height: 60px;
         background-color: #F1D302;
@@ -397,6 +396,7 @@ border-bottom: none;
         align-items: center;
         cursor: pointer;
         z-index: 1000;
+        margin-top: 2rem;
     }
     
     .overlay {
@@ -428,7 +428,7 @@ border-bottom: none;
     }
     
     h2 {
-        font-size: 50px;
+        font-size: 30px;
         font-family: 'Open Sans', sans-serif;
         position: relative;
         left: 2%;   
@@ -540,9 +540,8 @@ border-bottom: none;
     
     .BerichtenBox {
         overflow-y: auto; 
-        width: calc(100vw - 3rem); 
-        margin-left: 9rem; 
-        margin-right: 0rem;
+        width: 100%; /* Occupy full width of the screen */
+        margin-top: 5rem; /* Adjust margin to place it below the navbar */
         display: flex;
         flex-wrap: wrap;
         align-items: left; 
@@ -550,35 +549,29 @@ border-bottom: none;
     
     #nav-logo  {
         width: 5rem;
+        margin-top: 2rem;
     }
     
     .side-nav {
         position: fixed; 
         top: 0; 
         left: 0; 
-        bottom: 0; 
-        overflow-y: auto; 
-        overflow-x: hidden; 
+        width: 100%; /* Occupy the full width of the screen */
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-between; /* Align items horizontally */
         align-items: center;
-        height: 10vh;
-        
-        width: 7rem; 
+        height: 5rem; /* Adjust height to accommodate both navbar and "Berichten" */
         z-index: 100; 
         background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        border-right: 5px solid #4682B4;
-        border-bottom: none;
-        border-bottom: none;
-        border-left: none;
+        border-bottom: 5px solid #4682B4; /* Adjust border to separate navbar from content */
     }
     
     .header-logo    {
         height: 10rem;
-        margin: 0.5rem;
+        margin: 1rem;
+        
     }
     
     #BerichtImg {
@@ -599,7 +592,7 @@ border-bottom: none;
     
     .name {
     
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     font-weight: bold;
     border-right: 5px solid #235789;
@@ -610,7 +603,7 @@ border-bottom: none;
     }
     
     .date {
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     font-weight: bold;
     border-right: 5px solid #235789;
@@ -622,5 +615,6 @@ border-bottom: none;
     
     .plusIcon {
         font-size: 50px;
+        
     }
     }
