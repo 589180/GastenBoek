@@ -8,6 +8,12 @@ function sanitizeInput($input) {
     $badWords = array("nigger", "niger", "n1gger", "bitch", "b1tch", "fuck", "porn", "pornhub", "href", "'https", "neger", "negger", "kut", "fock");
     $input = preg_replace("/\b(nig\w*)\b/i", "***", $input); // Replace words starting with 'nig' with ***
     $input = str_ireplace($badWords, "***", $input); // Replace other bad words with ***
+    // Add more patterns as needed
+    $input = preg_replace("/\b(pornhub\w*)\b/i", "***", $input); // Replace words containing 'pornhub' with ***
+    $input = preg_replace("/\b(https\w*)\b/i", "***", $input); // Replace words containing 'https' with ***
+    $input = preg_replace("/\b(neg\w*)\b/i", "***", $input); // Replace words starting with 'neg' with ***
+    $input = preg_replace("/\b(kut\w*)\b/i", "***", $input); // Replace words containing 'kut' with ***
+    $input = preg_replace("/\b(fock\w*)\b/i", "***", $input); // Replace words containing 'fock' with ***
     return $input;
 }
 
