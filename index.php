@@ -12,7 +12,7 @@
         <div class="side-nav">
             <div class="header-logo">
                 <a href="index.html">
-                    <img id="nav-logo" src="uploads/home.png"> <!-- Link to home page -->
+                    <img id="nav-logo" src="navimg.png"> <!-- Link to home page -->
             </a>
             </div>
             <div class="bottom-button">
@@ -70,7 +70,7 @@
         ?>
         <div class="Bericht"> <!-- Container for each individual message -->
             <div class="Image"> <!-- Container for message image -->
-                <img id="BerichtImg" src="<?php echo $bericht['image']; ?>"> <!-- Display message image -->
+                <img id="BerichtImg" src="<?php echo $bericht['image']; ?>" alt="default_image.jpg" > <!-- Display message image -->
             </div>
             <div class="name"><?php echo $name; ?></div> <!-- Display message sender's name -->
             <div class="date"><?php echo $time; ?></div> <!-- Display message timestamp -->

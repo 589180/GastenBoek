@@ -41,12 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time = time();
 
 
-    $image = $_FILES['image'];
-   
-    $imagePath = 'uploads/' . basename($image['name']);
+    if(isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $image = $_FILES['image'];
+        $imagePath = 'uploads/' . basename($image['name']);
+        move_uploaded_file($image['tmp_name'], $imagePath);
+    } else {
+        $imagePath = 'default_image.jpg';
+    }
 
-    move_uploaded_file($image['tmp_name'], $imagePath);
- 
     $jsonData = file_get_contents('messages.json');
     // Decode the JSON content into a PHP associative array
     $data = json_decode($jsonData, true);

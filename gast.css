@@ -1,3 +1,4 @@
+@media only screen and (min-width: 700px) {
 .Bericht {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -11,24 +12,35 @@
       "Image Message Message Message"
       "Name Message Message Message"
       "Date Message Message Message";
-    width: 400px;
-    margin: 10px;
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 33px;
     height: 250px; 
-    border-color: #ffdd00;
+    border-color: #235789;
     border-style: solid;
-    border-radius: 0 0 30px 0; /* Only the right bottom corner is rounded */
+    border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
     border-width: 5px;
-    background-color: #23588924;
+    background: white
+    
+}
+
+@font-face {
+    font-family: 'NotoSansDisplay'; /* Custom font name */
+    src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
+    font-weight: normal; /* Specify the font weight */
+    font-stretch: normal; /* Specify the font stretch */
 }
   
 .Image { grid-area: Image; 
     border-style: solid;
-    border-width: 5px;
-    border-right: 5px solid #ffdd00;
+    border-right: 5px solid #235789;
     border-top: none;
-    border-bottom: 5px solid #ffdd00;
+    border-bottom: 2.5px solid #235789;
     border-left: none;
-    padding: 10px
+    padding: 10px;
+    border-radius: 0px 0px 5px 0px;
 }
   
 .Date { grid-area: Date; 
@@ -38,10 +50,13 @@
 .Message { grid-area: Message; 
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;
-    max-width: 370px;
+    max-width: 550px;
     word-wrap: break-word;
-    margin-top: -2%;
+    margin-top: 5px;
     padding: 10px;
+    font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
+    color: rgb(0, 0, 0); 
+    font-weight: bold;;
 }
 
 .example::-webkit-scrollbar {
@@ -49,9 +64,11 @@
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    background-color: white ;
+    font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
+    color: rgb(0, 0, 0); 
+    background-color: rgb(241, 241, 241);
 }
+
 h1, h2, h3 {
     font-family: 'Oswald', sans-serif;
 }
@@ -59,7 +76,7 @@ h1, h2, h3 {
     margin-bottom: 2rem;
     width: 60px;
     height: 60px;
-    background-color: #235789;
+    background-color: #F1D302;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -205,12 +222,14 @@ button[type="submit"] {
 
 .deskContainer {
     display: flex;
+    
 }
 
 .BerichtenBox {
     overflow-y: auto; 
     width: calc(100vw - 7rem); 
-    margin-left: 7rem; 
+    margin-left: 9rem; 
+    margin-right: 0rem;
     display: flex;
     flex-wrap: wrap;
     align-items: left; 
@@ -234,6 +253,13 @@ button[type="submit"] {
     height: 100vh;
     width: 7rem; 
     z-index: 100; 
+    background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-right: 5px solid #4682B4;
+    border-bottom: none;
+    border-bottom: none;
+    border-left: none;
 }
 
 .header-logo    {
@@ -242,15 +268,17 @@ button[type="submit"] {
 }
 
 #BerichtImg {
-    max-width: 110px; /* Set maximum width */
-    max-height: 110px; /* Set maximum height */
+    max-width: 100px; /* Set maximum width */
+    max-height: 100px; /* Set maximum height */
     width: auto; /* Allow width to adjust automatically */
     height: auto; /* Allow height to adjust automatically */
+    margin-left: 0.5rem;
+    border-radius: 5px;
 }
 
 .Image {
-    max-width: 110px; /* Set maximum width */
-    max-height: 110px; /* Set maximum height */
+    max-width: 125px; /* Set maximum width */
+    max-height: 100px; /* Set maximum height */
     width: auto; /* Allow width to adjust automatically */
     height: auto; /* Allow height to adjust automatically */
 } 
@@ -258,29 +286,32 @@ button[type="submit"] {
 .name {
 
 font-size: 20px;
-padding: 5px;
+padding: 10px;
 font-weight: bold;
-border-right: 5px solid #ffdd00;
+border-right: 5px solid #235789;
 border-left: none;
-border-top: none;
+border-top: 2.5px solid #235789;;
 border-bottom: none;
+border-radius: 0px 5px 0px 0px;
 }
 
 .date {
-    font-size: 20px;
-    padding: 5px;
-    font-weight: bold;
-    border-right: 5px solid #ffdd00;
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
+font-size: 20px;
+padding: 10px;
+font-weight: bold;
+border-right: 5px solid #235789;
+border-left: none;
+border-top: none;
+border-bottom: none;
+
 }
 
 .plusIcon {
     font-size: 50px;
 }
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 699px) {
     .Bericht {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -294,148 +325,302 @@ border-bottom: none;
           "Image Message Message Message"
           "Name Message Message Message"
           "Date Message Message Message";
-        border-radius: 0 0 30px 0; /* Only the right bottom corner is rounded */
-        width: 400px;
+        width: 600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 33px;
         height: 250px; 
-        border-color: #ffdd00;
-        background-color: #23588924;
+        border-color: #235789;
+        border-style: solid;
+        border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
+        border-width: 5px;
+        background: white
+        
     }
     
-.date {
-    font-size: 10px;
-    font-weight: bold;
+    @font-face {
+        font-family: 'NotoSansDisplay'; /* Custom font name */
+        src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
+        font-weight: normal; /* Specify the font weight */
+        font-stretch: normal; /* Specify the font stretch */
     }
-  
-.name {  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
+      
+    .Image { grid-area: Image; 
+        border-style: solid;
+        border-right: 5px solid #235789;
+        border-top: none;
+        border-bottom: 2.5px solid #235789;
+        border-left: none;
+        padding: 10px;
+        border-radius: 0px 0px 5px 0px;
+    }
+      
+    .Date { grid-area: Date; 
+        padding: 10px
+    }
+    
+    .Message { grid-area: Message; 
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        max-width: 550px;
+        word-wrap: break-word;
+        margin-top: 5px;
+        padding: 10px;
+        font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
+        color: rgb(0, 0, 0); 
+        font-weight: bold;;
+    }
+    
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+    
+    body {
+        font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
+        color: rgb(0, 0, 0); 
+        background-color: rgb(241, 241, 241);
+    }
+    
+    h1, h2, h3 {
+        font-family: 'Oswald', sans-serif;
+    }
+    .Button3 {
+        margin-bottom: 2rem;
+        width: 60px;
+        height: 60px;
+        background-color: #F1D302;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+    
+    .overlay-content {
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%; 
+        max-width: 500px; 
+        overflow-x: auto; 
+        border-radius: 20px;
+        border-width: 5px;
+        border-color: #235789 ;
+        border-style: solid;
+        z-index: 100;
+    }
+    
+    h2 {
+        font-size: 50px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        left: 2%;   
+    }
+    
+    .closeButton {
+        position: relative;
+        right: -95%;
+        font-size: 24px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-color: #235789;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .overlay-content h2 {
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+    
+    .overlay-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+    
+    .overlay-content label {
+        font-weight: bold;
+        margin-bottom: 5px; 
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+    
+    .overlay-content textarea {
+        height: 100px;
+        resize: vertical;
+        margin-bottom: 20px;
+        width: 100%; 
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+    
+    .overlay-content input[type="file"] {
+        margin-bottom: 20px;
+        width: 100%; 
+        font-family: 'Open Sans', sans-serif;    
+        z-index: 100;
+    }
+    
+    .overlay-content input[type="text"],
+    .overlay-content textarea{
+        border: 1px solid #235789; 
+        border-radius: 5px;
+        z-index: 100;
+    }
+    
+    .NavBar{
+        top: 0%;
+        left: 0%;
+        width: 7rem;
+        height: 99%;
+        border-radius: 5px;
+        border-color: #235789;
+        border-style: solid;
+        border-width: 5px;
+    }
+    
+    .Nav_image {
+    
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+    
+    .HomeBut1 {
+        text-decoration: none;
+        color: black;
+        z-index: 100;
+        position: absolute;
+        top: -18px;
+        left: 2px;
+    }
+    
+    button[type="submit"] {
+        background-color: #235789; 
+        color: rgb(255, 255, 255);
+        padding: 10px 20px; 
+        border-width:  2px; 
+        border-style: solid;
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 16px; 
+    }
+    
+    .deskContainer {
+        display: flex;
+        
+    }
+    
+    .BerichtenBox {
+        overflow-y: auto; 
+        width: calc(100vw - 3rem); 
+        margin-left: 9rem; 
+        margin-right: 0rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left; 
+    }
+    
+    #nav-logo  {
+        width: 5rem;
+    }
+    
+    .side-nav {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        bottom: 0; 
+        overflow-y: auto; 
+        overflow-x: hidden; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        
+        width: 7rem; 
+        z-index: 100; 
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-right: 5px solid #4682B4;
+        border-bottom: none;
+        border-bottom: none;
+        border-left: none;
+    }
+    
+    .header-logo    {
+        height: 10rem;
+        margin: 0.5rem;
+    }
+    
+    #BerichtImg {
+        max-width: 100px; /* Set maximum width */
+        max-height: 100px; /* Set maximum height */
+        width: auto; /* Allow width to adjust automatically */
+        height: auto; /* Allow height to adjust automatically */
+        margin-left: 0.5rem;
+        border-radius: 5px;
+    }
+    
+    .Image {
+        max-width: 125px; /* Set maximum width */
+        max-height: 100px; /* Set maximum height */
+        width: auto; /* Allow width to adjust automatically */
+        height: auto; /* Allow height to adjust automatically */
+    } 
+    
+    .name {
+    
+    font-size: 20px;
+    padding: 10px;
     font-weight: bold;
-    padding: 10px
-}
-  
-.image { grid-area: image; }
-  
-.Message {
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 370px;
-    word-wrap: break-word;  
-}
-  
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
-
-.plusIcon {
-    font-size: 30px;
-}
-
-.Image {
-    border-style: solid;
-    border-width: 5px;
-    border-right: 5px solid #ffdd00;
-    border-top: none;
-    border-bottom: 5px solid #ffdd00;
+    border-right: 5px solid #235789;
     border-left: none;
-    padding: 10px
-}
-
-.date {
-    font-size: 18px;
-    font-weight: bold;
-    justify-content: right;
-    align-items: right;    
-}
-
-.header-logo {
-    height: 10rem;
-    margin: 0.5rem;
-}
-
-#BerichtImg {
-    height: 92px;
-    width: 92px;  
-}
-
-.side-nav {
-    position: fixed; 
-    top: 0; 
-    left: 0%; 
-    bottom: 0; 
-    overflow-y: auto; 
-    overflow-x: hidden; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    width: 2rem; 
-    z-index: 100; 
-}
-
-.deskContainer {
-    display: flex;
+    border-top: 2.5px solid #235789;;
+    border-bottom: none;
+    border-radius: 0px 5px 0px 0px;
     }
-
-.BerichtenBox {
-    overflow-y: auto; 
-    width: calc(100% - 0rem); 
-    height: 100vh;
-    margin-left: 1rem; 
-    margin-right: 1rem;
-    display: flex;
-    gap: 1rem;
-    margin-top: 20%;
-    flex-wrap: wrap; 
-    align-items: left; 
-    position: relative; /* Set position relative to allow z-index to work */
-    z-index: 1; /* Ensure that the z-index is lower than the fixed elements */
-
-}
     
-.Bericht {
-    width: 400px;
-    margin: 0px;
-    height: 250px; 
-    border-color: #ffdd00;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 5px;
-    position: relative;
-    z-index: -1;
-}
-
-#nav-logo {
-    width: 3rem;
-    position: fixed;
-    top: 1%;
-    left: 1%;
-    z-index: 1001; /* Set a higher z-index to ensure it's above other elements */
-}
-
-
-.Button3 {
-    width: 50px;
-    height: 50px;
-    background-color: #235789;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1001; /* Set a higher z-index to ensure it's above other elements */
-    position: fixed;
-    top: 1%;
-    left: 83%;
-}
-
-h2 {
-    font-size: 30px;
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-    left: 2%;   
-}
-}
+    .date {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    border-right: 5px solid #235789;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    
+    }
+    
+    .plusIcon {
+        font-size: 50px;
+    }
+    }
