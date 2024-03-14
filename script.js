@@ -8,7 +8,6 @@ function closeOverlay() {
     document.querySelector(".overlay").style.display = "none";
 }
 
-
 // Eventlistener toevoegen aan het element met de id "plusButton", zodat wanneer erop wordt geklikt, de overlay wordt geopend
 document.getElementById("plusButton").addEventListener("click", openOverlay);
 

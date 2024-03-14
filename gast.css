@@ -222,7 +222,6 @@ button[type="submit"] {
 
 .deskContainer {
     display: flex;
-    
 }
 
 .BerichtenBox {
@@ -303,7 +302,6 @@ border-right: 5px solid #235789;
 border-left: none;
 border-top: none;
 border-bottom: none;
-
 }
 
 .plusIcon {
@@ -325,13 +323,13 @@ border-bottom: none;
           "Image Message Message Message"
           "Name Message Message Message"
           "Date Message Message Message";
-        width: 100%; /* Set width to occupy 90% of the screen */
-        margin: 10px auto; /* Center align and add margin */
-        height: auto; /* Adjust height automatically */
+        width: 100%; 
+        margin: 10px auto; 
+        height: auto; 
         height: auto; 
         border-color: #235789;
         border-style: solid;
-        border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
+        border-radius: 50px 10px 50px 10px;
         border-width: 5px;
         background: white
         
@@ -507,7 +505,6 @@ border-bottom: none;
     }
     
     .Nav_image {
-    
         font-size: 30px;
         font-family: 'Open Sans', sans-serif;
         z-index: 100;
@@ -535,7 +532,6 @@ border-bottom: none;
     
     .deskContainer {
         display: flex;
-        
     }
     
     .BerichtenBox {
@@ -571,7 +567,6 @@ border-bottom: none;
     .header-logo    {
         height: 10rem;
         margin: 1rem;
-        
     }
     
     #BerichtImg {
@@ -591,7 +586,6 @@ border-bottom: none;
     } 
     
     .name {
-    
     font-size: 15px;
     padding: 10px;
     font-weight: bold;
@@ -615,6 +609,5 @@ border-bottom: none;
     
     .plusIcon {
         font-size: 50px;
-        
     }
-    }
+}
