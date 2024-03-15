@@ -17,7 +17,7 @@
             </div>
             <div class="bottom-button">
                 <a id="click">
-                    <div class="Button3" id="plusButton"> <!-- Button to open message submission form -->
+                    <div class="Button1" id="plusButton"> <!-- Button to open message submission form -->
                         <div class="plusIcon">+</div> <!-- Icon for the button -->
                     </div>
                 </a>
