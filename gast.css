@@ -235,8 +235,10 @@
 
     .deskContainer {
         display: flex;
+        justify-content: center;
+        align-items: left;
     }
-
+    
     .BerichtenBox {
         overflow-y: auto;
         width: calc(100vw - 7rem);
@@ -244,9 +246,10 @@
         margin-right: 0rem;
         display: flex;
         flex-wrap: wrap;
-        align-items: left;
+        justify-content: flex-start; 
     }
-
+    
+    
     #nav-logo {
         width: 5rem;
     }
