@@ -1,6 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-.container {  display: grid;
+
+.container {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
@@ -8,14 +9,15 @@
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "Title Title . ."
-      ". . . ."
-      ". . . ."
-      ". . . ."
-      ". Button1 Button2 .";
-  }
-  
-  .Title { grid-area: Title; 
+        "Title Title . ."
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        ". . . .";
+}
+
+.Title {
+    grid-area: Title;
     background-color: white;
     width: 500px;
     height: 190px;
@@ -25,7 +27,7 @@
     border-radius: 20px;
 }
 
-.Button2 {
+.BerichtBut {
     grid-area: Button2;
     background-color: #ffffff;
     width: 250px;
@@ -43,15 +45,13 @@
     border-bottom-color: #235789;
     border-left-color: #235789;
     /* Adjust the gradient direction to match the desired rotation */
-    border-image: linear-gradient(to right, #F1D302, #F1D302) 0 0 100% 0, linear-gradient(to bottom, #235789, #235789) 0 100% 0 0; /* Adjust the colors and direction as needed */
+    border-image: linear-gradient(to right, #F1D302, #F1D302) 0 0 100% 0, linear-gradient(to bottom, #235789, #235789) 0 100% 0 0;
+    /* Adjust the colors and direction as needed */
 }
 
-.Button2:hover {
-    /* Adjust properties for hover effect */
-    transform: scale(1.1); /* Grow bigger on hover */
-}
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -76,11 +76,11 @@ body {
 }
 
 .Online p {
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 
-.TextBut2 {
+.PaginaText {
     color: black;
     font-weight: bold;
     font-size: 25px;
@@ -91,8 +91,8 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    text-decoration: none; 
-    line-height: 100px; 
+    text-decoration: none;
+    line-height: 100px;
 }
 
 #openBerichtenPaginaButton {
@@ -103,7 +103,8 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .container {  display: grid;
+    .container {
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-auto-columns: 1fr;
@@ -111,70 +112,82 @@ body {
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
-          ". Title Title ."
-          ". . . ."
-          ". Button1 Button2 ."
-          ". . . .";
+            ". Title Title ."
+            ". . . ."
+            ". . . ."
+            ". . . .";
     }
-      
-.Title { grid-area: Title; 
-    background-color: white;
-    width: 250px;
-    height: 150px;
-    border-style: solid;
-    border-width: 9px;
-    border-color: #f1d102ac;
-    border-radius: 20px;
-}
-      
-.Button2 { grid-area: Button2;
-    background-color: #ffffff;
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 17%;
-    border-style: solid;
-    border-width: 9px;
-    border-color: #4682B4 /* Yellow */ #4682B4 /* Blue */ #F1D302 /* Yellow */ #F1D302 /* Blue */; /* Clockwise: top, right, bottom, left */
-    border-radius: 20px;
-    z-index: 1;    
-}
-      
-html, body {
-    height: 100%;
-    margin: 0;
-}
-    
-body {
-    background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, white 33.33%, white 66.67%, #F1D302 66.67%);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    overflow: hidden;
-     z-index: -1;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.Online {
-    font-weight: bold;
-    position: absolute;
-    align-self: left;
-    color: #020100;
-    font-size: 40px;
-    font-family: 'Open Sans', sans-serif;
-    padding: 10px;
-}
-    
-.Online p {
-    margin: 0; 
-    padding: 0;
-     
-}
-    
-#openBerichtenPaginaButton {
-    font-size: 35px;
-    position: absolute;
-    top: -20%;
-    line-height: 15px;
-}
+    .Title {
+        grid-area: Title;
+        background-color: white;
+        width: 250px;
+        height: 150px;
+        border-style: solid;
+        border-width: 9px;
+        border-color: #f1d102ac;
+        border-radius: 20px;
+    }
+
+    .BerichtBut {
+        grid-area: Button2;
+        background-color: #ffffff;
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 17%;
+        border-style: solid;
+        border-width: 9px;
+        border-color: #4682B4
+            /* Yellow */
+            #4682B4
+            /* Blue */
+            #F1D302
+            /* Yellow */
+            #F1D302
+            /* Blue */
+        ;
+        /* Clockwise: top, right, bottom, left */
+        border-radius: 20px;
+        z-index: 1;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, white 33.33%, white 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        z-index: -1;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .Online {
+        font-weight: bold;
+        position: absolute;
+        align-self: left;
+        color: #020100;
+        font-size: 40px;
+        font-family: 'Open Sans', sans-serif;
+        padding: 10px;
+    }
+
+    .Online p {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    #openBerichtenPaginaButton {
+        font-size: 35px;
+        position: absolute;
+        top: -20%;
+        line-height: 15px;
+    }
 }

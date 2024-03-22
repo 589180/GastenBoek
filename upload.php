@@ -13,12 +13,6 @@ if (isset($_SESSION['message_sent']) && $_SESSION['message_sent'] === true) {
 
 # Create a file in order to remember that some one posted. 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_ip = $_SERVER['REMOTE_ADDR'];
-
-    if (file_exists('messages/' . $user_ip . '.txt')) {
-        header("Location: index.php");
-        exit;
-    }
 
     # If name if longer than 8 chracters then give error
     $nameLimit = 8; 
@@ -90,7 +84,7 @@ function sanitizeInput($input) {
     $input = strip_tags($input); 
     $input = htmlspecialchars($input);
     
-    $badWords = array("nigger", "niger", "n1gger", "bitch", "b1tch", "fuck", "porn", "pornhub", "href", "'https", "neger", "negger", "kut", "fock", "h0mo", "homo");
+    $badWords = array("nigger", "niger", "n1gger", "bitch", "b1tch", "fuck", "porn", "pornhub", "href", "'https", "neger", "negger", "kut", "fock", "h0mo", "homo", "kanker");
     $input = preg_replace("/\b(nig\w*)\b/i", "***", $input); 
     $input = str_ireplace($badWords, "***", $input); 
     

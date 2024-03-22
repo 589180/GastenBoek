@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
     <div class="deskContainer">
         <div class="side-nav">
             <div class="header-logo">
-                <a href="index.html">
+                <a href="homepage.html">
                     <img id="nav-logo" src="navimg.png"> <!-- Link to home page -->
             </a>
             </div>

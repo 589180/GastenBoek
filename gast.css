@@ -1,1235 +1,1328 @@
 @media only screen and (min-width: 700px) {
-.Bericht {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-grid-auto-columns: 1fr;
-grid-auto-rows: 1fr;
-gap: 0px 0px;
-grid-auto-flow: row;
-grid-template-areas:
-"Image Message Message Message"
-"Image Message Message Message"
-"Name Message Message Message"
-"Date Message Message Message";
-width: 600px;
-margin-top: 20px;
-margin-bottom: 20px;
-margin-right: 10px;
-margin-left: 33px;
-height: 250px; 
-border-color: #235789;
-border-style: solid;
-border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
-border-width: 5px;
-background: white
+    .Bericht {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Image Message Message Message"
+            "Image Message Message Message"
+            "Name Message Message Message"
+            "Date Message Message Message";
+        width: 600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 33px;
+        height: 250px;
+        border-color: #235789;
+        border-style: solid;
+        border-radius: 50px 10px 50px 10px;
+        /* Only the right bottom corner is rounded */
+        border-width: 5px;
+        background: white
+    }
 
-}
+    @font-face {
+        font-family: 'NotoSansDisplay';
+        /* Custom font name */
+        src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype');
+        /* Path relative to the CSS file */
+        font-weight: normal;
+        /* Specify the font weight */
+        font-stretch: normal;
+        /* Specify the font stretch */
+    }
 
-@font-face {
-font-family: 'NotoSansDisplay'; /* Custom font name */
-src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
-font-weight: normal; /* Specify the font weight */
-font-stretch: normal; /* Specify the font stretch */
-}
+    .Image {
+        grid-area: Image;
+        border-style: solid;
+        border-right: 5px solid #235789;
+        border-top: none;
+        border-bottom: 2.5px solid #235789;
+        border-left: none;
+        padding: 10px;
+        border-radius: 0px 0px 5px 0px;
+    }
 
-.Image { grid-area: Image; 
-border-style: solid;
-border-right: 5px solid #235789;
-border-top: none;
-border-bottom: 2.5px solid #235789;
-border-left: none;
-padding: 10px;
-border-radius: 0px 0px 5px 0px;
-}
+    .Date {
+        grid-area: Date;
+        padding: 10px
+    }
 
-.Date { grid-area: Date; 
-padding: 10px
-}
+    .Message {
+        grid-area: Message;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        max-width: 550px;
+        word-wrap: break-word;
+        margin-top: 5px;
+        padding: 10px;
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        ;
+    }
 
-.Message { grid-area: Message; 
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-max-width: 550px;
-word-wrap: break-word;
-margin-top: 5px;
-padding: 10px;
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-font-weight: bold;;
-}
+    .example::-webkit-scrollbar {
+        display: none;
+    }
 
-.example::-webkit-scrollbar {
-display: none;
-}
+    body {
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        background-color: rgb(241, 241, 241);
+    }
 
-body {
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-background-color: rgb(241, 241, 241);
-}
+    h1,
+    h2,
+    h3 {
+        font-family: 'Oswald', sans-serif;
+    }
 
-h1, h2, h3 {
-font-family: 'Oswald', sans-serif;
-}
-.Button1 {
-margin-bottom: 2rem;
-width: 60px;
-height: 60px;
-background-color: #F1D302;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
+    .Button1 {
+        margin-bottom: 2rem;
+        width: 60px;
+        height: 60px;
+        background-color: #F1D302;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: rgba(0, 0, 0, 0.5);
-display: none;
-justify-content: center;
-align-items: center;
-z-index: 100;
-}
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
 
-.overlay-content {
-background-color: rgb(255, 255, 255);
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-width: 80%; 
-max-width: 500px; 
-overflow-x: auto; 
-border-radius: 20px;
-border-width: 5px;
-border-color: #235789 ;
-border-style: solid;
-z-index: 100;
-}
+    .overlay-content {
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 500px;
+        overflow-x: auto;
+        border-radius: 20px;
+        border-width: 5px;
+        border-color: #235789;
+        border-style: solid;
+        z-index: 100;
+    }
 
-h2 {
-font-size: 50px;
-font-family: 'Open Sans', sans-serif;
-position: relative;
-left: 2%;   
-}
+    h2 {
+        font-size: 50px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        left: 2%;
+    }
 
-.closeButton {
-position: relative;
-right: -95%;
-font-size: 24px;
-cursor: pointer;
-width: 20px;
-height: 20px;
-background-color: #235789;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
+    .closeButton {
+        position: relative;
+        right: -95%;
+        font-size: 24px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-color: #235789;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-.overlay-content h2 {
-margin-bottom: 20px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content h2 {
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content form {
-display: flex;
-flex-direction: column;
-align-items: flex-start; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content label {
-font-weight: bold;
-margin-bottom: 5px; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content textarea {
-height: 100px;
-resize: vertical;
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content textarea {
+        height: 100px;
+        resize: vertical;
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content input[type="file"] {
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;    
-z-index: 100;
-}
+    .overlay-content input[type="file"] {
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content input[type="text"],
-.overlay-content textarea{
-border: 1px solid #235789; 
-border-radius: 5px;
-z-index: 100;
-}
+    .overlay-content input[type="text"],
+    .overlay-content textarea {
+        border: 1px solid #235789;
+        border-radius: 5px;
+        z-index: 100;
+    }
 
-.NavBar{
-top: 0%;
-left: 0%;
-width: 7rem;
-height: 99%;
-border-radius: 5px;
-border-color: #235789;
-border-style: solid;
-border-width: 5px;
-}
+    .NavBar {
+        top: 0%;
+        left: 0%;
+        width: 7rem;
+        height: 99%;
+        border-radius: 5px;
+        border-color: #235789;
+        border-style: solid;
+        border-width: 5px;
+    }
 
-.Nav_image {
+    .Nav_image {
 
-font-size: 30px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.HomeBut1 {
-text-decoration: none;
-color: black;
-z-index: 100;
-position: absolute;
-top: -18px;
-left: 2px;
-}
+    .HomeBut1 {
+        text-decoration: none;
+        color: black;
+        z-index: 100;
+        position: absolute;
+        top: -18px;
+        left: 2px;
+    }
 
-button[type="submit"] {
-background-color: #235789; 
-color: rgb(255, 255, 255);
-padding: 10px 20px; 
-border-width:  2px; 
-border-style: solid;
-border-radius: 5px; 
-cursor: pointer; 
-font-size: 16px; 
-}
+    button[type="submit"] {
+        background-color: #235789;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-.deskContainer {
-display: flex;
-}
+    .deskContainer {
+        display: flex;
+    }
 
-.BerichtenBox {
-overflow-y: auto; 
-width: calc(100vw - 7rem); 
-margin-left: 9rem; 
-margin-right: 0rem;
-display: flex;
-flex-wrap: wrap;
-align-items: left; 
-}
+    .BerichtenBox {
+        overflow-y: auto;
+        width: calc(100vw - 7rem);
+        margin-left: 9rem;
+        margin-right: 0rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left;
+    }
 
-#nav-logo  {
-width: 5rem;
-}
+    #nav-logo {
+        width: 5rem;
+    }
 
-.side-nav {
-position: fixed; 
-top: 0; 
-left: 0; 
-bottom: 0; 
-overflow-y: auto; 
-overflow-x: hidden; 
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-height: 100vh;
-width: 7rem; 
-z-index: 100; 
-background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
-background-size: 100% 100%;
-background-repeat: no-repeat;
-border-right: 5px solid #4682B4;
-border-bottom: none;
-border-bottom: none;
-border-left: none;
-}
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 7rem;
+        z-index: 100;
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-right: 5px solid #4682B4;
+        border-bottom: none;
+        border-bottom: none;
+        border-left: none;
+    }
 
-.header-logo    {
-height: 10rem;
-margin: 0.5rem;
-}
+    .header-logo {
+        height: 10rem;
+        margin: 0.5rem;
+    }
 
-#BerichtImg {
-max-width: 100px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-margin-left: 0.5rem;
-border-radius: 5px;
-}
+    #BerichtImg {
+        max-width: 100px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+        margin-left: 0.5rem;
+        border-radius: 5px;
+    }
 
-.Image {
-max-width: 125px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-} 
+    .Image {
+        max-width: 125px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+    }
 
-.name {
+    .name {
 
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: 2.5px solid #235789;;
-border-bottom: none;
-border-radius: 0px 5px 0px 0px;
-}
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: 2.5px solid #235789;
+        ;
+        border-bottom: none;
+        border-radius: 0px 5px 0px 0px;
+    }
 
-.date {
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: none;
-border-bottom: none;
-}
+    .date {
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+    }
 
-.plusIcon {
-font-size: 50px;
-}
+    .plusIcon {
+        font-size: 50px;
+    }
 }
 
 @media only screen and (max-width: 699px) {
-.Bericht {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-grid-auto-columns: 1fr;
-grid-auto-rows: 1fr;
-gap: 0px 0px;
-grid-auto-flow: row;
-grid-template-areas:
-    "Image Message Message Message"
-    "Image Message Message Message"
-    "Name Message Message Message"
-    "Date Message Message Message";
-width: 100%; 
-margin: 10px auto; 
-height: auto; 
-height: auto; 
-border-color: #235789;
-border-style: solid;
-border-radius: 50px 10px 50px 10px;
-border-width: 5px;
-background: white
-
-}
-
-@font-face {
-font-family: 'NotoSansDisplay'; /* Custom font name */
-src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
-font-weight: normal; /* Specify the font weight */
-font-stretch: normal; /* Specify the font stretch */
-}
-
-.Image { grid-area: Image; 
-border-style: solid;
-border-right: 5px solid #235789;
-border-top: none;
-border-bottom: 2.5px solid #235789;
-border-left: none;
-padding: 10px;
-border-radius: 0px 0px 5px 0px;
-}
-
-.Date { grid-area: Date; 
-padding: 10px
-}
-
-.Message { grid-area: Message; 
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-max-width: 550px;
-word-wrap: break-word;
-margin-top: 5px;
-padding: 10px;
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-font-weight: bold;;
-}
-
-.example::-webkit-scrollbar {
-display: none;
-}
-
-body {
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-background-color: rgb(241, 241, 241);
-}
-
-h1, h2, h3 {
-font-family: 'Oswald', sans-serif;
-}
-.Button1 {
-margin-bottom: 2rem;
-margin-right: 1rem;
-width: 60px;
-height: 60px;
-background-color: #F1D302;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-margin-top: 2rem;
-}
-
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: rgba(0, 0, 0, 0.5);
-display: none;
-justify-content: center;
-align-items: center;
-z-index: 100;
-}
-
-.overlay-content {
-background-color: rgb(255, 255, 255);
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-width: 80%; 
-max-width: 500px; 
-overflow-x: auto; 
-border-radius: 20px;
-border-width: 5px;
-border-color: #235789 ;
-border-style: solid;
-z-index: 100;
-}
-
-h2 {
-font-size: 30px;
-font-family: 'Open Sans', sans-serif;
-position: relative;
-left: 2%;   
-}
-
-.closeButton {
-position: relative;
-right: -95%;
-font-size: 24px;
-cursor: pointer;
-width: 20px;
-height: 20px;
-background-color: #235789;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
-
-.overlay-content h2 {
-margin-bottom: 20px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content form {
-display: flex;
-flex-direction: column;
-align-items: flex-start; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content label {
-font-weight: bold;
-margin-bottom: 5px; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content textarea {
-height: 100px;
-resize: vertical;
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content input[type="file"] {
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;    
-z-index: 100;
-}
-
-.overlay-content input[type="text"],
-.overlay-content textarea{
-border: 1px solid #235789; 
-border-radius: 5px;
-z-index: 100;
-}
-
-.NavBar{
-top: 0%;
-left: 0%;
-width: 7rem;
-height: 99%;
-border-radius: 5px;
-border-color: #235789;
-border-style: solid;
-border-width: 5px;
-}
-
-.Nav_image {
-font-size: 30px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.HomeBut1 {
-text-decoration: none;
-color: black;
-z-index: 100;
-position: absolute;
-top: -18px;
-left: 2px;
-}
-
-button[type="submit"] {
-background-color: #235789; 
-color: rgb(255, 255, 255);
-padding: 10px 20px; 
-border-width:  2px; 
-border-style: solid;
-border-radius: 5px; 
-cursor: pointer; 
-font-size: 16px; 
-}
-
-.deskContainer {
-display: flex;
-}
-
-.BerichtenBox {
-overflow-y: auto; 
-width: 100%; /* Occupy full width of the screen */
-margin-top: 5rem; /* Adjust margin to place it below the navbar */
-display: flex;
-flex-wrap: wrap;
-align-items: left; 
-}
-
-#nav-logo  {
-width: 5rem;
-margin-top: 2rem;
-}
-
-.side-nav {
-position: fixed; 
-top: 0; 
-left: 0; 
-width: 100%; /* Occupy the full width of the screen */
-display: flex;
-justify-content: space-between; /* Align items horizontally */
-align-items: center;
-height: 5rem; /* Adjust height to accommodate both navbar and "Berichten" */
-z-index: 100; 
-background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
-background-size: 100% 100%;
-background-repeat: no-repeat;
-border-bottom: 5px solid #4682B4; /* Adjust border to separate navbar from content */
-}
-
-.header-logo    {
-height: 10rem;
-margin: 1rem;
-}
-
-#BerichtImg {
-max-width: 100px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-margin-left: 0.5rem;
-border-radius: 5px;
-}
-
-.Image {
-max-width: 125px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-} 
-
-.name {
-font-size: 15px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: 2.5px solid #235789;;
-border-bottom: none;
-border-radius: 0px 5px 0px 0px;
-}
-
-.date {
-font-size: 15px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: none;
-border-bottom: none;
-
-}
-
-.plusIcon {
-font-size: 50px;
-}
-}
-
-@media only screen and (min-width: 1024px)  and (max-width: 1439px) {
-.Bericht {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-grid-auto-columns: 1fr;
-grid-auto-rows: 1fr;
-gap: 0px 0px;
-grid-auto-flow: row;
-grid-template-areas:
-    "Image Message Message Message"
-    "Image Message Message Message"
-    "Name Message Message Message"
-    "Date Message Message Message";
-width: 600px;
-margin-top: 20px;
-margin-bottom: 20px;
-margin-right: 10px;
-margin-left: 33px;
-height: 250px; 
-border-color: #235789;
-border-style: solid;
-border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
-border-width: 5px;
-background: white
-
-}
-
-@font-face {
-font-family: 'NotoSansDisplay'; /* Custom font name */
-src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
-font-weight: normal; /* Specify the font weight */
-font-stretch: normal; /* Specify the font stretch */
-}
-
-.Image { grid-area: Image; 
-border-style: solid;
-border-right: 5px solid #235789;
-border-top: none;
-border-bottom: 2.5px solid #235789;
-border-left: none;
-padding: 10px;
-border-radius: 0px 0px 5px 0px;
-}
-
-.Date { grid-area: Date; 
-padding: 10px
-}
-
-.Message { grid-area: Message; 
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-max-width: 550px;
-word-wrap: break-word;
-margin-top: 5px;
-padding: 10px;
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-font-weight: bold;;
-}
-
-.example::-webkit-scrollbar {
-display: none;
-}
-
-body {
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-background-color: rgb(241, 241, 241);
-}
-
-h1, h2, h3 {
-font-family: 'Oswald', sans-serif;
-}
-.Button1 {
-margin-bottom: 2rem;
-width: 60px;
-height: 60px;
-background-color: #F1D302;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
-
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: rgba(0, 0, 0, 0.5);
-display: none;
-justify-content: center;
-align-items: center;
-z-index: 100;
-}
-
-.overlay-content {
-background-color: rgb(255, 255, 255);
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-width: 80%; 
-max-width: 500px; 
-overflow-x: auto; 
-border-radius: 20px;
-border-width: 5px;
-border-color: #235789 ;
-border-style: solid;
-z-index: 100;
-}
-
-h2 {
-font-size: 50px;
-font-family: 'Open Sans', sans-serif;
-position: relative;
-left: 2%;   
-}
-
-.closeButton {
-position: relative;
-right: -95%;
-font-size: 24px;
-cursor: pointer;
-width: 20px;
-height: 20px;
-background-color: #235789;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
-
-.overlay-content h2 {
-margin-bottom: 20px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content form {
-display: flex;
-flex-direction: column;
-align-items: flex-start; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content label {
-font-weight: bold;
-margin-bottom: 5px; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content textarea {
-height: 100px;
-resize: vertical;
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.overlay-content input[type="file"] {
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;    
-z-index: 100;
-}
-
-.overlay-content input[type="text"],
-.overlay-content textarea{
-border: 1px solid #235789; 
-border-radius: 5px;
-z-index: 100;
-}
-
-.NavBar{
-top: 0%;
-left: 0%;
-width: 7rem;
-height: 99%;
-border-radius: 5px;
-border-color: #235789;
-border-style: solid;
-border-width: 5px;
-}
-
-.Nav_image {
-
-font-size: 30px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
-
-.HomeBut1 {
-text-decoration: none;
-color: black;
-z-index: 100;
-position: absolute;
-top: -18px;
-left: 2px;
-}
-
-button[type="submit"] {
-background-color: #235789; 
-color: rgb(255, 255, 255);
-padding: 10px 20px; 
-border-width:  2px; 
-border-style: solid;
-border-radius: 5px; 
-cursor: pointer; 
-font-size: 16px; 
-}
-
-.deskContainer {
-display: flex;
-}
-
-.BerichtenBox {
-overflow-y: auto; 
-width: calc(100vw - 7rem); 
-margin-left: 13rem; 
-margin-right: 0rem;
-display: flex;
-flex-wrap: wrap;
-align-items: left; 
-}
-
-#nav-logo  {
-width: 5rem;
-}
-
-.side-nav {
-position: fixed; 
-top: 0; 
-left: 0; 
-bottom: 0; 
-overflow-y: auto; 
-overflow-x: hidden; 
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-height: 100vh;
-width: 7rem; 
-z-index: 100; 
-background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
-background-size: 100% 100%;
-background-repeat: no-repeat;
-border-right: 5px solid #4682B4;
-border-bottom: none;
-border-bottom: none;
-border-left: none;
-}
-
-.header-logo    {
-height: 10rem;
-margin: 0.5rem;
-}
-
-#BerichtImg {
-max-width: 100px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-margin-left: 0.5rem;
-border-radius: 5px;
-}
-
-.Image {
-max-width: 125px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-} 
-
-.name {
-
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: 2.5px solid #235789;;
-border-bottom: none;
-border-radius: 0px 5px 0px 0px;
-}
-
-.date {
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: none;
-border-bottom: none;
-}
-
-.plusIcon {
-font-size: 50px;
-}
+    .Bericht {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Image Message Message Message"
+            "Image Message Message Message"
+            "Name Message Message Message"
+            "Date Message Message Message";
+        width: 100%;
+        margin: 10px auto;
+        height: auto;
+        height: auto;
+        border-color: #235789;
+        border-style: solid;
+        border-radius: 50px 10px 50px 10px;
+        border-width: 5px;
+        background: white
+    }
+
+    @font-face {
+        font-family: 'NotoSansDisplay';
+        /* Custom font name */
+        src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype');
+        /* Path relative to the CSS file */
+        font-weight: normal;
+        /* Specify the font weight */
+        font-stretch: normal;
+        /* Specify the font stretch */
+    }
+
+    .Image {
+        grid-area: Image;
+        border-style: solid;
+        border-right: 5px solid #235789;
+        border-top: none;
+        border-bottom: 2.5px solid #235789;
+        border-left: none;
+        padding: 10px;
+        border-radius: 0px 0px 5px 0px;
+    }
+
+    .Date {
+        grid-area: Date;
+        padding: 10px
+    }
+
+    .Message {
+        grid-area: Message;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        max-width: 550px;
+        word-wrap: break-word;
+        margin-top: 5px;
+        padding: 10px;
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        ;
+    }
+
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        background-color: rgb(241, 241, 241);
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .Button1 {
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+        width: 60px;
+        height: 60px;
+        background-color: #F1D302;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+        margin-top: 2rem;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .overlay-content {
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 500px;
+        overflow-x: auto;
+        border-radius: 20px;
+        border-width: 5px;
+        border-color: #235789;
+        border-style: solid;
+        z-index: 100;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        left: 2%;
+    }
+
+    .closeButton {
+        position: relative;
+        right: -95%;
+        font-size: 24px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-color: #235789;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .overlay-content h2 {
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content textarea {
+        height: 100px;
+        resize: vertical;
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content input[type="file"] {
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content input[type="text"],
+    .overlay-content textarea {
+        border: 1px solid #235789;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    .NavBar {
+        top: 0%;
+        left: 0%;
+        width: 7rem;
+        height: 99%;
+        border-radius: 5px;
+        border-color: #235789;
+        border-style: solid;
+        border-width: 5px;
+    }
+
+    .Nav_image {
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .HomeBut1 {
+        text-decoration: none;
+        color: black;
+        z-index: 100;
+        position: absolute;
+        top: -18px;
+        left: 2px;
+    }
+
+    button[type="submit"] {
+        background-color: #235789;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .deskContainer {
+        display: flex;
+    }
+
+    .BerichtenBox {
+        overflow-y: auto;
+        width: 100%;
+        /* Occupy full width of the screen */
+        margin-top: 5rem;
+        /* Adjust margin to place it below the navbar */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left;
+    }
+
+    #nav-logo {
+        width: 5rem;
+        margin-top: 2rem;
+    }
+
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Occupy the full width of the screen */
+        display: flex;
+        justify-content: space-between;
+        /* Align items horizontally */
+        align-items: center;
+        height: 5rem;
+        /* Adjust height to accommodate both navbar and "Berichten" */
+        z-index: 100;
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-bottom: 5px solid #4682B4;
+        /* Adjust border to separate navbar from content */
+    }
+
+    .header-logo {
+        height: 10rem;
+        margin: 1rem;
+    }
+
+    #BerichtImg {
+        max-width: 100px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+        margin-left: 0.5rem;
+        border-radius: 5px;
+    }
+
+    .Image {
+        max-width: 125px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+    }
+
+    .name {
+        font-size: 15px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: 2.5px solid #235789;
+        ;
+        border-bottom: none;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .date {
+        font-size: 15px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+
+    }
+
+    .plusIcon {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .Bericht {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Image Message Message Message"
+            "Image Message Message Message"
+            "Name Message Message Message"
+            "Date Message Message Message";
+        width: 600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 33px;
+        height: 250px;
+        border-color: #235789;
+        border-style: solid;
+        border-radius: 50px 10px 50px 10px;
+        /* Only the right bottom corner is rounded */
+        border-width: 5px;
+        background: white
+    }
+
+    @font-face {
+        font-family: 'NotoSansDisplay';
+        /* Custom font name */
+        src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype');
+        /* Path relative to the CSS file */
+        font-weight: normal;
+        /* Specify the font weight */
+        font-stretch: normal;
+        /* Specify the font stretch */
+    }
+
+    .Image {
+        grid-area: Image;
+        border-style: solid;
+        border-right: 5px solid #235789;
+        border-top: none;
+        border-bottom: 2.5px solid #235789;
+        border-left: none;
+        padding: 10px;
+        border-radius: 0px 0px 5px 0px;
+    }
+
+    .Date {
+        grid-area: Date;
+        padding: 10px
+    }
+
+    .Message {
+        grid-area: Message;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        max-width: 550px;
+        word-wrap: break-word;
+        margin-top: 5px;
+        padding: 10px;
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        ;
+    }
+
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        background-color: rgb(241, 241, 241);
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .Button1 {
+        margin-bottom: 2rem;
+        width: 60px;
+        height: 60px;
+        background-color: #F1D302;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .overlay-content {
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 500px;
+        overflow-x: auto;
+        border-radius: 20px;
+        border-width: 5px;
+        border-color: #235789;
+        border-style: solid;
+        z-index: 100;
+    }
+
+    h2 {
+        font-size: 50px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        left: 2%;
+    }
+
+    .closeButton {
+        position: relative;
+        right: -95%;
+        font-size: 24px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-color: #235789;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .overlay-content h2 {
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content textarea {
+        height: 100px;
+        resize: vertical;
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content input[type="file"] {
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .overlay-content input[type="text"],
+    .overlay-content textarea {
+        border: 1px solid #235789;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    .NavBar {
+        top: 0%;
+        left: 0%;
+        width: 7rem;
+        height: 99%;
+        border-radius: 5px;
+        border-color: #235789;
+        border-style: solid;
+        border-width: 5px;
+    }
+
+    .Nav_image {
+
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
+
+    .HomeBut1 {
+        text-decoration: none;
+        color: black;
+        z-index: 100;
+        position: absolute;
+        top: -18px;
+        left: 2px;
+    }
+
+    button[type="submit"] {
+        background-color: #235789;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .deskContainer {
+        display: flex;
+    }
+
+    .BerichtenBox {
+        overflow-y: auto;
+        width: calc(100vw - 7rem);
+        margin-left: 13rem;
+        margin-right: 0rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left;
+    }
+
+    #nav-logo {
+        width: 5rem;
+    }
+
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 7rem;
+        z-index: 100;
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-right: 5px solid #4682B4;
+        border-bottom: none;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    .header-logo {
+        height: 10rem;
+        margin: 0.5rem;
+    }
+
+    #BerichtImg {
+        max-width: 100px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+        margin-left: 0.5rem;
+        border-radius: 5px;
+    }
+
+    .Image {
+        max-width: 125px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+    }
+
+    .name {
+
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: 2.5px solid #235789;
+        ;
+        border-bottom: none;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .date {
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .plusIcon {
+        font-size: 50px;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
-.Bericht {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-grid-auto-columns: 1fr;
-grid-auto-rows: 1fr;
-gap: 0px 0px;
-grid-auto-flow: row;
-grid-template-areas:
-    "Image Message Message Message"
-    "Image Message Message Message"
-    "Name Message Message Message"
-    "Date Message Message Message";
-width: 550px;
-margin-top: 20px;
-margin-bottom: 20px;
-margin-right: 10px;
-margin-left: 33px;
-height: 250px; 
-border-color: #235789;
-border-style: solid;
-border-radius: 50px 10px 50px 10px; /* Only the right bottom corner is rounded */
-border-width: 5px;
-background: white
+    .Bericht {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Image Message Message Message"
+            "Image Message Message Message"
+            "Name Message Message Message"
+            "Date Message Message Message";
+        width: 550px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 33px;
+        height: 250px;
+        border-color: #235789;
+        border-style: solid;
+        border-radius: 50px 10px 50px 10px;
+        /* Only the right bottom corner is rounded */
+        border-width: 5px;
+        background: white
+    }
 
-}
+    @font-face {
+        font-family: 'NotoSansDisplay';
+        /* Custom font name */
+        src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype');
+        /* Path relative to the CSS file */
+        font-weight: normal;
+        /* Specify the font weight */
+        font-stretch: normal;
+        /* Specify the font stretch */
+    }
 
-@font-face {
-font-family: 'NotoSansDisplay'; /* Custom font name */
-src: url('NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype'); /* Path relative to the CSS file */
-font-weight: normal; /* Specify the font weight */
-font-stretch: normal; /* Specify the font stretch */
-}
+    .Image {
+        grid-area: Image;
+        border-style: solid;
+        border-right: 5px solid #235789;
+        border-top: none;
+        border-bottom: 2.5px solid #235789;
+        border-left: none;
+        padding: 10px;
+        border-radius: 0px 0px 5px 0px;
+    }
 
-.Image { grid-area: Image; 
-border-style: solid;
-border-right: 5px solid #235789;
-border-top: none;
-border-bottom: 2.5px solid #235789;
-border-left: none;
-padding: 10px;
-border-radius: 0px 0px 5px 0px;
-}
+    .Date {
+        grid-area: Date;
+        padding: 10px
+    }
 
-.Date { grid-area: Date; 
-padding: 10px
-}
+    .Message {
+        grid-area: Message;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        max-width: 550px;
+        word-wrap: break-word;
+        margin-top: 5px;
+        padding: 10px;
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        ;
+    }
 
-.Message { grid-area: Message; 
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-max-width: 550px;
-word-wrap: break-word;
-margin-top: 5px;
-padding: 10px;
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-font-weight: bold;;
-}
+    .example::-webkit-scrollbar {
+        display: none;
+    }
 
-.example::-webkit-scrollbar {
-display: none;
-}
+    body {
+        font-family: 'NotoSansDisplay', sans-serif;
+        /* Use your custom font */
+        color: rgb(0, 0, 0);
+        background-color: rgb(241, 241, 241);
+    }
 
-body {
-font-family: 'NotoSansDisplay', sans-serif; /* Use your custom font */
-color: rgb(0, 0, 0); 
-background-color: rgb(241, 241, 241);
-}
+    h1,
+    h2,
+    h3 {
+        font-family: 'Oswald', sans-serif;
+    }
 
-h1, h2, h3 {
-font-family: 'Oswald', sans-serif;
-}
-.Button1 {
-margin-bottom: 2rem;
-width: 60px;
-height: 60px;
-background-color: #F1D302;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
+    .Button1 {
+        margin-bottom: 2rem;
+        width: 60px;
+        height: 60px;
+        background-color: #F1D302;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: rgba(0, 0, 0, 0.5);
-display: none;
-justify-content: center;
-align-items: center;
-z-index: 100;
-}
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
 
-.overlay-content {
-background-color: rgb(255, 255, 255);
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-width: 80%; 
-max-width: 500px; 
-overflow-x: auto; 
-border-radius: 20px;
-border-width: 5px;
-border-color: #235789 ;
-border-style: solid;
-z-index: 100;
-}
+    .overlay-content {
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 500px;
+        overflow-x: auto;
+        border-radius: 20px;
+        border-width: 5px;
+        border-color: #235789;
+        border-style: solid;
+        z-index: 100;
+    }
 
-h2 {
-font-size: 50px;
-font-family: 'Open Sans', sans-serif;
-position: relative;
-left: 2%;   
-}
+    h2 {
+        font-size: 50px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        left: 2%;
+    }
 
-.closeButton {
-position: relative;
-right: -95%;
-font-size: 24px;
-cursor: pointer;
-width: 20px;
-height: 20px;
-background-color: #235789;
-color: white;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-z-index: 1000;
-}
+    .closeButton {
+        position: relative;
+        right: -95%;
+        font-size: 24px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background-color: #235789;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
-.overlay-content h2 {
-margin-bottom: 20px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content h2 {
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content form {
-display: flex;
-flex-direction: column;
-align-items: flex-start; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content label {
-font-weight: bold;
-margin-bottom: 5px; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content textarea {
-height: 100px;
-resize: vertical;
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+    .overlay-content textarea {
+        height: 100px;
+        resize: vertical;
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content input[type="file"] {
-margin-bottom: 20px;
-width: 100%; 
-font-family: 'Open Sans', sans-serif;    
-z-index: 100;
-}
+    .overlay-content input[type="file"] {
+        margin-bottom: 20px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.overlay-content input[type="text"],
-.overlay-content textarea{
-border: 1px solid #235789; 
-border-radius: 5px;
-z-index: 100;
-}
+    .overlay-content input[type="text"],
+    .overlay-content textarea {
+        border: 1px solid #235789;
+        border-radius: 5px;
+        z-index: 100;
+    }
 
-.NavBar{
-top: 0%;
-left: 0%;
-width: 7rem;
-height: 99%;
-border-radius: 5px;
-border-color: #235789;
-border-style: solid;
-border-width: 5px;
-}
+    .NavBar {
+        top: 0%;
+        left: 0%;
+        width: 7rem;
+        height: 99%;
+        border-radius: 5px;
+        border-color: #235789;
+        border-style: solid;
+        border-width: 5px;
+    }
 
-.Nav_image {
+    .Nav_image {
 
-font-size: 30px;
-font-family: 'Open Sans', sans-serif;
-z-index: 100;
-}
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        z-index: 100;
+    }
 
-.HomeBut1 {
-text-decoration: none;
-color: black;
-z-index: 100;
-position: absolute;
-top: -18px;
-left: 2px;
-}
+    .HomeBut1 {
+        text-decoration: none;
+        color: black;
+        z-index: 100;
+        position: absolute;
+        top: -18px;
+        left: 2px;
+    }
 
-button[type="submit"] {
-background-color: #235789; 
-color: rgb(255, 255, 255);
-padding: 10px 20px; 
-border-width:  2px; 
-border-style: solid;
-border-radius: 5px; 
-cursor: pointer; 
-font-size: 16px; 
-}
+    button[type="submit"] {
+        background-color: #235789;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-.deskContainer {
-display: flex;
-}
+    .deskContainer {
+        display: flex;
+    }
 
-.BerichtenBox {
-overflow-y: auto; 
-width: calc(100vw - 7rem); 
-margin-left: 10rem; 
-margin-right: 0rem;
-display: flex;
-flex-wrap: wrap;
-align-items: left; 
-}
+    .BerichtenBox {
+        overflow-y: auto;
+        width: calc(100vw - 7rem);
+        margin-left: 10rem;
+        margin-right: 0rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: left;
+    }
 
-#nav-logo  {
-width: 5rem;
-}
+    #nav-logo {
+        width: 5rem;
+    }
 
-.side-nav {
-position: fixed; 
-top: 0; 
-left: 0; 
-bottom: 0; 
-overflow-y: auto; 
-overflow-x: hidden; 
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-height: 100vh;
-width: 7rem; 
-z-index: 100; 
-background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
-background-size: 100% 100%;
-background-repeat: no-repeat;
-border-right: 5px solid #4682B4;
-border-bottom: none;
-border-bottom: none;
-border-left: none;
-}
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 7rem;
+        z-index: 100;
+        background: linear-gradient(-45deg, #4682B4 0%, #4682B4 33.33%, rgb(244, 244, 244) 33.33%, rgb(244, 244, 244) 66.67%, #F1D302 66.67%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-right: 5px solid #4682B4;
+        border-bottom: none;
+        border-bottom: none;
+        border-left: none;
+    }
 
-.header-logo    {
-height: 10rem;
-margin: 0.5rem;
-}
+    .header-logo {
+        height: 10rem;
+        margin: 0.5rem;
+    }
 
-#BerichtImg {
-max-width: 100px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-margin-left: 0.5rem;
-border-radius: 5px;
-}
+    #BerichtImg {
+        max-width: 100px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+        margin-left: 0.5rem;
+        border-radius: 5px;
+    }
 
-.Image {
-max-width: 125px; /* Set maximum width */
-max-height: 100px; /* Set maximum height */
-width: auto; /* Allow width to adjust automatically */
-height: auto; /* Allow height to adjust automatically */
-} 
+    .Image {
+        max-width: 125px;
+        /* Set maximum width */
+        max-height: 100px;
+        /* Set maximum height */
+        width: auto;
+        /* Allow width to adjust automatically */
+        height: auto;
+        /* Allow height to adjust automatically */
+    }
 
-.name {
+    .name {
 
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: 2.5px solid #235789;;
-border-bottom: none;
-border-radius: 0px 5px 0px 0px;
-}
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: 2.5px solid #235789;
+        ;
+        border-bottom: none;
+        border-radius: 0px 5px 0px 0px;
+    }
 
-.date {
-font-size: 20px;
-padding: 10px;
-font-weight: bold;
-border-right: 5px solid #235789;
-border-left: none;
-border-top: none;
-border-bottom: none;
-}
+    .date {
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        border-right: 5px solid #235789;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+    }
 
-.plusIcon {
-font-size: 50px;
-}
+    .plusIcon {
+        font-size: 50px;
+    }
 }
