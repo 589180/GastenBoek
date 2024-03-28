@@ -52,26 +52,26 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="BerichtenBox">
+        <div class="BerichtenBox" id="berichtenBox">
     <?php
-    $jsonData = file_get_contents("messages.json"); // Read JSON data from file
-    $data = json_decode($jsonData, true); // Decode JSON data into associative array
+    $jsonData = file_get_contents("messages.json");
+    $data = json_decode($jsonData, true); 
 
     $time = date('d-m-y H:i:s'); // Get current time
 
-    foreach ($data as $bericht) { // Loop through each message in the data
-        // Extract message details from the $bericht array
-        $name = $bericht['name']; // Get the sender's name
-        $message = $bericht['message']; // Get the message content
-        $timestamp = $bericht['time']; // Get the Unix timestamp of the message
+    foreach ($data as $bericht) { 
 
-        // Convert Unix timestamp to a human-readable date and time format
-        $time = date('d-m-y H:i:s', $timestamp); // Convert Unix timestamp to date and time format
+        $name = $bericht['name']; 
+        $message = $bericht['message'];
+        $timestamp = $bericht['time']; 
 
-        // Output the message details within HTML structure
+        
+        $time = date('d-m-y H:i:s', $timestamp); 
+
+     
         ?>
-        <div class="Bericht"> <!-- Container for each individual message -->
-            <div class="Image"> <!-- Container for message image -->
+        <div class="Bericht"> 
+            <div class="Image"> 
                 <img id="BerichtImg" src="<?php echo $bericht['image']; ?>" alt="default_image.jpg" > <!-- Display message image -->
             </div>
             <div class="name"><?php echo $name; ?></div> <!-- Display message sender's name -->

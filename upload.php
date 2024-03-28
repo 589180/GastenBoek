@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $message = sanitizeInput($_POST['message']);
 
-    if (strlen($message) > $messageLimit) {
+    if (strlen($message) > $messageLimit) {0
         echo "Error: Message exceeds the character limit of $messageLimit.";
         exit;
     }
